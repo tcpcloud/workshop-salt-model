@@ -1,0 +1,26 @@
+classes:
+- service.openssh.server
+parameters:
+  linux:
+    system:
+      user:
+        root:
+          enabled: true
+          name: root
+          home: /root
+          # Password is cloudlab, comment out, configure your SSH key bellow
+          # and disable password auth
+          # password: $6$0Qqj.6l.$T9k9Onm9pIDo6ULABVBRNogyizG.9CnwQ4bvI4xH.AWeIGHbLyFU87ejMTtKvAAyd3dncRYbeUV.VbnXJU2u./
+  openssh:
+    server:
+      permit_root_login: true
+#      password_auth: true
+#      user:
+#        root:
+#          enabled: true
+#          user: ${linux:system:user:root}
+#          public_keys:
+#          - ${public_keys:root}
+#  public_keys:
+#    root:
+#      key: your key here

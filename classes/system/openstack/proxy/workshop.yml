@@ -1,0 +1,30 @@
+classes:
+- system.openstack.common.workshop
+parameters:
+  nginx:
+    server:
+      enabled: true
+      site:
+        nginx_proxy_novnc:
+          enabled: true
+          type: nginx_proxy
+          name: novnc
+          proxy:
+            host: ${_param:cluster_vip_address}
+            port: 6080
+            protocol: http
+            websocket: true
+          host:
+            name: ${_param:cluster_local_address}
+            port: 6080
+        nginx_proxy_contrail:
+          enabled: true
+          type: nginx_proxy
+          name: contrail
+          proxy:
+            host: ${_param:cluster_vip_address}
+            port: 8143
+            protocol: https
+          host:
+            name: ${_param:cluster_local_address}
+            port: 8143

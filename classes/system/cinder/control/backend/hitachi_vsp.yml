@@ -1,0 +1,5 @@
+  cinder:
+    controller:
+      types: []
+      storage:
+        engine: hitachi

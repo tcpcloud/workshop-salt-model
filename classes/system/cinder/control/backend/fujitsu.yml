@@ -1,0 +1,16 @@
+parameters:
+  _param:
+    cinder_storage_port: 5988
+    cinder_storage_connection: FC
+    cinder_storage_host: 10.0.103.9
+    cinder_storage_user: root
+    cinder_storage_password: password
+  cinder:
+    controller:
+      storage:
+        engine: fujitsu
+        host: ${_param:cinder_storage_host}
+        port: ${_param:cinder_storage_port}
+        user: ${_param:cinder_storage_user}
+        password: ${_param:cinder_storage_password}
+        connection: ${_param:cinder_storage_connection}

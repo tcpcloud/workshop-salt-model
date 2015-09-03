@@ -1,0 +1,12 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            graphite:
+              source: pkg
+              name: salt-formula-graphite
+            postgresql:
+              source: pkg
+              name: salt-formula-postgresql
