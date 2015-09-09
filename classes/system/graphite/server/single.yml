@@ -2,18 +2,18 @@ classes:
 - service.memcached.server.local
 - service.postgresql.server.local
 - service.graphite.server.single
-- service.nginx.server.single
+- service.apache2.server.single
 - service.supervisor.server.single
 parameters:
   _param:
     graphite_secret_key: secret
     postgresql_graphite_password: password
-    nginx_site_graphite_host: ${_param:single_address}
+    apache2_site_graphite_host: ${_param:single_address}
     rabbitmq_graphite_password: password
     rabbitmq_monitor_password: password
     rabbitmq_admin_password: password
     rabbitmq_secret_key: password
-  nginx:
+  apache2:
     server:
       site:
         graphite_server:
@@ -21,7 +21,7 @@ parameters:
           type: graphite
           name: server
           host:
-            name: ${_param:nginx_site_graphite_host}
+            name: ${_param:apache2_site_graphite_host}
   postgresql:
     server:
       database:
