@@ -8,11 +8,11 @@ classes:
 - system.salt.master.formula.kedb
 - system.salt.master.formula.linux
 - system.salt.master.formula.openstack_core
-#- system.salt.master.formula.openstack_tcp
 - system.salt.master.formula.saltstack
 - system.salt.master.formula.sensu
 - system.reclass.storage.salt
 - system.reclass.storage.system.workshop
+- system.openstack.common.workshop
 parameters:
   _param:
     reclass_data_repository: "https://github.com/tcpcloud/workshop-salt-model.git"
