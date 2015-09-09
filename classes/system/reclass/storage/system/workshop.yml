@@ -86,11 +86,7 @@ parameters:
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
-          - system.graphite.server.single
-          - system.sensu.client.remote
-          - system.sensu.server.single
-          - system.sensu.server.dashboard
-          - system.openstack.common.workshop
+          - system.openstack.monitor.workshop
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.107
