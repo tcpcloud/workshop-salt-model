@@ -93,6 +93,9 @@ parameters:
           names:
           - ${_param:cluster_extra01_hostname}
     system:
+      repo:
+        openvstorage:
+          source: "deb http://apt-ovs.cloudfounders.com alpha/"
       user:
         root:
           enabled: true
