@@ -4,7 +4,6 @@ classes:
 - service.graphite.server.single
 - service.nginx.server.single
 - service.supervisor.server.single
-- service.rabbitmq.server.local
 parameters:
   _param:
     graphite_secret_key: secret
