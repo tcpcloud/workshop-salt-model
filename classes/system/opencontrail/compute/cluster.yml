@@ -5,6 +5,7 @@ parameters:
     opencontrail_compute_iface_mask: 24
   opencontrail:
     common:
+      version: ${_param:opencontrail_version}
       identity:
         engine: keystone
         host: ${_param:cluster_vip_address}
@@ -16,6 +17,7 @@ parameters:
         host: ${_param:cluster_vip_address}
         port: 9696
     compute:
+      version: ${_param:opencontrail_version}
       enabled: True
       discovery:
         host: ${_param:cluster_vip_address}
