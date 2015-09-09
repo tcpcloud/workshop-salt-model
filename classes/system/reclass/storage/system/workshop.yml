@@ -89,6 +89,7 @@ parameters:
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
+          - system.openstack.common.workshop
           - system.graphite.server.single
           params:
             salt_master_host: ${_param:reclass_config_master}

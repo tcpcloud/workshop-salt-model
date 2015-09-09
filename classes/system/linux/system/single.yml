@@ -2,6 +2,7 @@ classes:
 - service.linux.system
 - service.ntp.client
 - service.salt.minion.master
+- system.collectd.client.carbon
 - system.openssh.server.single
 parameters:
   linux:

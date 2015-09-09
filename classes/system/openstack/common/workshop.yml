@@ -1,6 +1,8 @@
 parameters:
   _param:
     admin_email: root@localhost
+    collectd_backend_carbon_host: mon01
+    collectd_backend_carbon_port: 2013
     opencontrail_version: 2.2
     opencontrail_compute_dns: 8.8.8.8
     opencontrail_stats_password: contrail123
@@ -80,3 +82,7 @@ parameters:
           address: ${_param:cluster_node03_address}
           names:
           - ${_param:cluster_node03_hostname}
+        mon01:
+          address: 172.10.10.107
+          names:
+          - mon01
