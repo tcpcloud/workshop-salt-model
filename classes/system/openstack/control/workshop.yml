@@ -15,7 +15,6 @@ classes:
 - system.nova.control.cluster
 - system.neutron.control.cluster
 - system.cinder.control.cluster
-- service.cinder.volume.single
 - system.heat.server.cluster
 - system.opencontrail.control.cluster
 - system.openstack.common.workshop
