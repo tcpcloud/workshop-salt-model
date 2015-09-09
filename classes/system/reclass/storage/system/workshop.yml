@@ -52,7 +52,6 @@ parameters:
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
-          - system.openssh.server.single
           - system.openstack.compute.workshop
           params:
             salt_master_host: ${_param:reclass_config_master}
@@ -65,7 +64,6 @@ parameters:
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
-          - system.openssh.server.single
           - system.openstack.compute.workshop
           params:
             salt_master_host: ${_param:reclass_config_master}
@@ -78,7 +76,6 @@ parameters:
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
-          - system.openssh.server.single
           - system.horizon.server.single
           - system.openstack.proxy.workshop
           params:
@@ -89,14 +86,14 @@ parameters:
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
-          - system.openstack.common.workshop
           - system.graphite.server.single
+          - system.sensu.client.remote
+          - system.sensu.server.single
+          - system.sensu.server.dashboard
+          - system.openstack.common.workshop
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.107
-            graphite_secret_key: password
-            rabbitmq_monitor_password: password
-            carbon_message_queue_host: 172.10.10.107
         mtr01.workshop.cloudlab.cz:
           name: mtr01
           domain: workshop.cloudlab.cz

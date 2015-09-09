@@ -3,6 +3,7 @@ classes:
 - service.ntp.client
 - service.salt.minion.master
 - system.collectd.client.carbon
+#- system.sensu.client.single
 - system.openssh.server.single
 parameters:
   linux:
