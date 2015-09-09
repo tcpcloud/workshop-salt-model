@@ -49,6 +49,9 @@ parameters:
             nova:
               source: pkg
               name: salt-formula-nova
+            openvstorage:
+              source: pkg
+              name: salt-formula-openvstorage
             python:
               source: pkg
               name: salt-formula-python
