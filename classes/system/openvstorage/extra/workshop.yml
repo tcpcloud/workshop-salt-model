@@ -1,0 +1,16 @@
+classes:
+  - service.openvstorage.server.extra
+  - system.openvstorage.common.workshop
+  - system.cinder.volume.single
+  - system.cinder.volume.backend.openvstorage
+parameters:
+  nova:
+    compute:
+      image:
+        use_cow: false
+      notification:
+        driver: nova.openstack.common.notifier.rpc_notifier
+        topics: notifications
+        notify_on:
+          state_change: vm_and_task_state
+          any_change: True

@@ -1,0 +1,47 @@
+classes:
+  - service.memcached.server.single
+  - service.openvstorage.server.master
+  - system.openvstorage.common.workshop
+  - system.cinder.volume.single
+  - system.cinder.volume.backend.openvstorage
+applications:
+- rabbitmq
+parameters:
+  rabbitmq:
+    server:
+      enabled: true
+      secret_key: ${_param:ovs_rabbitmq_secret_key}
+      bind:
+        address: ${_param:cluster_local_address}
+        port: 5672
+      plugins:
+      - amqp_client
+      - rabbitmq_management
+      admin:
+        name: admin
+        password: ${_param:ovs_rabbitmq_admin_password}
+      host:
+        '/':
+          enabled: true
+          user: ovs
+          password: ${_param:ovs_rabbitmq_ovs_password}
+          policies:
+          - name: HA
+            pattern: '^(volumerouter|ovs_.*)$'
+            definition: '{"ha-mode": "all"}'
+    cluster:
+      enabled: true
+      name: openvstorage
+      role: ${_param:ovs_rabbitmq_cluster_role}
+      master: ${_param:cluster_master01_hostname}
+      mode: disc
+      members:
+      - name: ${_param:cluster_master01_hostname}
+        host: ${_param:cluster_master01_address}
+      - name: ${_param:cluster_master02_hostname}
+        host: ${_param:cluster_master02_address}
+      - name: ${_param:cluster_master03_hostname}
+        host: ${_param:cluster_master03_address}
+  memcached:
+    server:
+      cache_size: 1024

@@ -100,3 +100,73 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.108
             ceilometer_database_host: 172.10.10.108
+        ovscmp01.workshop.cloudlab.cz:
+          name: ovscmp01
+          domain: workshop.cloudlab.cz
+          classes:
+          - system.linux.system.single
+          - system.openssh.server.single
+          - system.openvstorage.master.workshop
+          - system.openstack.compute.workshop
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 172.10.10.109
+            opencontrail_compute_address: 172.10.10.109
+            opencontrail_compute_gateway: 172.10.10.1
+            opencontrail_compute_iface: eth0
+            ovs_hypervisor_name: ovscmp01
+            ovs_rabbitmq_cluster_role: master
+          parameters:
+            openvstorage:
+              server:
+                setup:
+                  cluster:
+                    join: false
+        ovscmp02.workshop.cloudlab.cz:
+          name: ovscmp02
+          domain: workshop.cloudlab.cz
+          classes:
+          - system.linux.system.single
+          - system.openssh.server.single
+          - system.openvstorage.master.workshop
+          - system.openstack.compute.workshop
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 172.10.10.110
+            opencontrail_compute_address: 172.10.10.110
+            opencontrail_compute_gateway: 172.10.10.1
+            opencontrail_compute_iface: eth0
+            ovs_hypervisor_name: ovscmp02
+            ovs_rabbitmq_cluster_role: slave
+        ovscmp03.workshop.cloudlab.cz:
+          name: ovscmp03
+          domain: workshop.cloudlab.cz
+          classes:
+          - system.linux.system.single
+          - system.openssh.server.single
+          - system.openvstorage.master.workshop
+          - system.openstack.compute.workshop
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 172.10.10.111
+            opencontrail_compute_address: 172.10.10.111
+            opencontrail_compute_gateway: 172.10.10.1
+            opencontrail_compute_iface: eth0
+            ovs_hypervisor_name: ovscmp03
+            ovs_rabbitmq_cluster_role: slave
+        ovscmp04.workshop.cloudlab.cz:
+          name: ovscmp04
+          domain: workshop.cloudlab.cz
+          classes:
+          - system.linux.system.single
+          - system.openssh.server.single
+          - system.openvstorage.extra.workshop
+          - system.openstack.compute.workshop
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 172.10.10.112
+            opencontrail_compute_address: 172.10.10.112
+            opencontrail_compute_gateway: 172.10.10.1
+            opencontrail_compute_iface: eth0
+            ovs_hypervisor_name: ovscmp04
+            ovs_rabbitmq_cluster_role: slave

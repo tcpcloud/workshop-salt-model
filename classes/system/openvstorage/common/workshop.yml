@@ -1,0 +1,157 @@
+parameters:
+  _param:
+    # RabbitMQ
+    ovs_rabbitmq_secret_key: shuu6eimoH9iovoo0gaet7pesafey3aequah1aiChi7xahGhae2na2aiYahquie5
+    ovs_rabbitmq_admin_password: baiL7keexielohph4deiPeoraephoh2l
+    ovs_rabbitmq_ovs_password: 0penv5tor4ge
+    # Haproxy
+    ovs_cluster_vip_address: 172.10.10.254
+    # OVS setup
+    ovs_cluster_name: workshop
+    # OVS master nodes
+    cluster_master01_hostname: ovscmp01
+    cluster_master01_address: 172.10.10.109
+    cluster_master02_hostname: ovscmp02
+    cluster_master02_address: 172.10.10.110
+    cluster_master03_hostname: ovscmp03
+    cluster_master03_address: 172.10.10.111
+    # OVS extra nodes
+    cluster_extra01_hostname: ovscmp04
+    cluster_extra01_address: 172.10.10.112
+
+  openvstorage:
+    server:
+      vpools:
+        - vpool1
+      setup:
+        # target:
+          # TODO: use password auth than untested private key auth
+          # password: taeg5ooWishuucig
+        # master:
+          # password: taeg5ooWishuucig
+        disk:
+          layout:
+            /mnt/cache1:
+              device: DIR_ONLY
+              ssd: false
+              percentage: 100
+              label: cache1
+              type: writecache
+            /mnt/cache2:
+              device: DIR_ONLY
+              ssd: false
+              percentage: 100
+              label: cache2
+              type: readcache
+            /var/tmp:
+              device: DIR_ONLY
+              ssd: false
+              percentage: 100
+              label: tempfs
+              type: storage
+        cluster:
+          other_nodes:
+            ovscmp01:
+              ip: ${_param:cluster_master01_address}
+              ip_list:
+                - ${_param:cluster_master01_address}
+              type: unknown
+            ovscmp02:
+              ip: ${_param:cluster_master02_address}
+              ip_list:
+                - ${_param:cluster_master02_address}
+              type: unknown
+            ovscmp03:
+              ip: ${_param:cluster_master03_address}
+              ip_list:
+                - ${_param:cluster_master03_address}
+              type: unknown
+            ovscmp04:
+              ip: ${_param:cluster_extra01_address}
+              ip_list:
+                - ${_param:cluster_extra01_address}
+              type: unknown
+
+  # Add nodes to /etc/hosts
+  linux:
+    network:
+      host:
+        master01:
+          address: ${_param:cluster_master01_address}
+          names:
+          - ${_param:cluster_master01_hostname}
+        master02:
+          address: ${_param:cluster_master02_address}
+          names:
+          - ${_param:cluster_master02_hostname}
+        master03:
+          address: ${_param:cluster_master03_address}
+          names:
+          - ${_param:cluster_master03_hostname}
+        extra01:
+          address: ${_param:cluster_extra01_address}
+          names:
+          - ${_param:cluster_extra01_hostname}
+    system:
+      user:
+        root:
+          enabled: true
+          name: root
+          home: /root
+          # TODO: root password for initial ovs setup (taeg5ooWishuucig)
+          # password: $6$x1ysYNbJ$ivGkh.tyarowY0aXQxturvdeEuDw12f2xcVOTCaIAoWQHrpKxm1k1LKzOc1PnCzA9OtuKHIlmMtw7frcAjVIJ1
+
+  # Setup OpenSSH so nodes can communicate between each other
+  openssh:
+    client:
+      enabled: true
+      user:
+        root:
+          enabled: true
+          user: ${linux:system:user:root}
+          private_key: ${private_keys:ovs_cluster}
+          public_key: ${public_keys:ovs_cluster}
+    server:
+      permit_root_login: true
+      # TODO: password auth is required for initial ovs deploy
+      # password_auth: true
+      user:
+        root:
+          enabled: true
+          public_keys:
+          - ${public_keys:ovs_cluster}
+          user: ${linux:system:user:root}
+  public_keys:
+    ovs_cluster:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2kRpdTvUGQ8wT0tQR7uKUJPxO6HY3YnAyJYSXnXlJ8aVu8teSzq8IKv9Zpz1VzpHYOzE+dsWJSal0SrN7xM55dh5Ia9JhtiZxSD+n9Vc7flYAiOosTrbAWIMeRX7AN2ALnROcIJdnE+DAnfDURCuhAffTFV0c5DFfruMh9RJnxis+dvlwFwHNkFDAevZB2hIMfLl0BmbXLxbVw8kZR0UA+AGl81hXnUFE6hbc6OPp4ryzk4vwbxV+6s2T3HjAIXi5SCaQFCf3hRviVh9wsp/9MvkQzQXFE1gK+emMH7EwSucmLranEO/05/Bp6V5oEpRiYZMbPpes/SLtzEGrdeb9
+  private_keys:
+    ovs_cluster:
+      type: rsa
+      key: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEpAIBAAKCAQEAtpEaXU71BkPME9LUEe7ilCT8Tuh2N2JwMiWEl515SfGlbvLX
+        ks6vCCr/Wac9Vc6R2DsxPnbFiUmpdEqze8TOeXYeSGvSYbYmcUg/p/VXO35WAIjq
+        LE62wFiDHkV+wDdgC50TnCCXZxPgwJ3w1EQroQH30xVdHOQxX67jIfUSZ8YrPnb5
+        cBcBzZBQwHr2QdoSDHy5dAZm1y8W1cPJGUdFAPgBpfNYV51BROoW3Ojj6eK8s5OL
+        8G8VfurNk9x4wCF4uUgmkBQn94Ub4lYfcLKf/TL5EM0FxRNYCvnpjB+xMErnJi62
+        pxDv9OfwaeleaBKUYmGTGz6XrP0i7cxBq3Xm/QIDAQABAoIBAQCDT1BYJm8jp2XE
+        KFJx55C+Hu/+TUKhyUKLPuLkLdZL8escJrwYkmHgDRUGRbxe2CmcDc74b3LasMmZ
+        pBT+A2rCf8t+KVbzApEZz25BfrvURaTT06YiYicdp0v/XNqyo+GH2N1+4Q4kjG6N
+        +8t40ONUddbq0qXbHuHIQUCKbvti+TWPUu8V1qHfUUHT2FbzGID+cG32GwAdtUrC
+        Mxh6itsDK+DC/31TM9Tid7NKOtJUu7WMFDZqgT/DQDPHVL3gyb4fYnVh6F1mTeza
+        7q+M1lVEOnEwDX4GOqGG26hsmEO9rISa/OnG7C7W8AImoU1cexJp5maBMcuYAV1h
+        P71Y99ohAoGBAN3oP66f8UiAbFituV9qoaHRo+C2FPAe8KZPa39qgDBuBiQoxyuf
+        ReAW472dNrmHYOVjnbrAjsFn9QUSaPDO4QlWdSxc0IVnKSh4V1MG4NsI67Mrkfd0
+        KxlY30rI1ws3nyCzJENEIjFJbVGzA5hd0grG3BMXgCGXFzrgpmU8q5E1AoGBANKd
+        kifcTEkMeSBARxsBsZTQMPODhx++glA5XfLargvFLpKxt0VpNgyZ/rE4XRCE+5og
+        yyHkk91B1n1hqTRJQd/yoh2459gp/SnB1qOj4fP+igMWFumPigNp9/8DwbEvyeCp
+        djrRevlUROg5hV5MdteqxzJHHntresoH8F49ez+pAoGBAMTQTlsFBK13KaFlQ3p7
+        SqwJEb4mAGAQMQRwgDlcLiHGE7BScoQgGYttAcSVAYp/pdMODUErs/GZ0FkVQPoD
+        otfzVK1qDI+lNX3tbhX3jcr3GIWq6SV+ZRNwHWtowkHyrTIFcO4wKdto8op5qYCk
+        Bb0FLv/H4h7osPPJeAtmSgzZAoGAdnGW2EPTwuD43WJImq+BJqdOYCP/waJptqQM
+        aZ8Bci0Z2/WFk8tvUfbofNGtxLSEqlD268CYRz3XWfuqJHVuTnstIHn0KGS0st8H
+        zk9DquviwYmSqRbIDtNxXEDIlNTDO00R6FIWTlFNzytKDZYC35ZzH5tPUSlIjIWa
+        b+UzgsECgYBBCQdPcDeuYiyo9ZDQ4xc+TuBimDq58PZcBL5yZMnK/xZ+ecQMXA3y
+        c6mIDrHklpvBBO8FS4v78umEx6rwT/hAvcCn3L4IU0xzVmMcO6JKWjrB6LE/TFYK
+        8y6x95XuvAwC3ajLw3X8SaYh9YSsg38Se9w3pBNeeM27TZc3LWF/gw==
+        -----END RSA PRIVATE KEY-----

@@ -36,3 +36,16 @@ Instructions
   - ``classes/billometer/server/single.yml`` - set password
 
   - ``classes/system/graphite`` - set password
+
+Open vStorage
+-------------
+
+If you want to deploy Open vStorage cluster, you should update
+``classes/system/openvstorage/common/workshop.yml`` and set SSH key pair for
+communication between OVS components.
+
+You can generate new key by running:
+
+.. code-block:: bash
+
+   ssh-keygen -f ovs_cluster
