@@ -9,6 +9,7 @@ parameters:
           - system.linux.system.single
           - system.openstack.control.workshop
           - service.galera.master.cluster
+          - system.linux.system.lowmem
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.101
@@ -24,6 +25,7 @@ parameters:
           - system.linux.system.single
           - system.openstack.control.workshop
           - service.galera.slave.cluster
+          - system.linux.system.lowmem
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.102
@@ -39,6 +41,7 @@ parameters:
           - system.linux.system.single
           - system.openstack.control.workshop
           - service.galera.slave.cluster
+          - system.linux.system.lowmem
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.103
