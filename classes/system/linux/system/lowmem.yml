@@ -6,6 +6,7 @@ parameters:
       swap:
         swap01:
           enabled: true
+          engine: file
           device: /var/tmp/swap01
           size: 2048
   opencontrail:
