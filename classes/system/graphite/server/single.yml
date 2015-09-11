@@ -2,7 +2,7 @@ classes:
 - service.memcached.server.local
 - service.postgresql.server.local
 - service.graphite.server.single
-- service.apache2.server.single
+- service.apache.server.single
 - service.supervisor.server.single
 parameters:
   _param:
@@ -13,7 +13,7 @@ parameters:
     rabbitmq_monitor_password: password
     rabbitmq_admin_password: password
     rabbitmq_secret_key: password
-  apache2:
+  apache:
     server:
       site:
         graphite_server:
