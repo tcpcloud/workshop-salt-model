@@ -4,6 +4,9 @@ parameters:
       environment:
         prd:
           formula:
+            apache:
+              source: pkg
+              name: salt-formula-apache
             graphite:
               source: pkg
               name: salt-formula-graphite
