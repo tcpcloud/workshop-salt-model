@@ -42,4 +42,4 @@ parameters:
           password: ${_param:rabbitmq_graphite_password}
   supervisor:
     server:
-      enabled: true
+      enabled: false
