@@ -24,11 +24,6 @@ parameters:
       vpools:
         - vpool1
       setup:
-        # target:
-          # TODO: use password auth than untested private key auth
-          # password: taeg5ooWishuucig
-        # master:
-          # password: taeg5ooWishuucig
         disk:
           layout:
             /mnt/cache1:
@@ -95,14 +90,12 @@ parameters:
     system:
       repo:
         openvstorage:
-          source: "deb http://apt-ovs.cloudfounders.com alpha/"
+          source: "deb http://apt-ovs.cloudfounders.com unstable/"
       user:
         root:
           enabled: true
           name: root
           home: /root
-          # TODO: root password for initial ovs setup (taeg5ooWishuucig)
-          # password: $6$x1ysYNbJ$ivGkh.tyarowY0aXQxturvdeEuDw12f2xcVOTCaIAoWQHrpKxm1k1LKzOc1PnCzA9OtuKHIlmMtw7frcAjVIJ1
 
   # Setup OpenSSH so nodes can communicate between each other
   openssh:
@@ -116,8 +109,6 @@ parameters:
           public_key: ${public_keys:ovs_cluster}
     server:
       permit_root_login: true
-      # TODO: password auth is required for initial ovs deploy
-      # password_auth: true
       user:
         root:
           enabled: true
