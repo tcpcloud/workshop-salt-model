@@ -32,6 +32,7 @@ parameters:
     keystone_service_host: ${_param:cluster_vip_address}
     heat_version: kilo
     heat_service_host: ${_param:cluster_vip_address}
+    heat_domain_admin_password: workshop
     ceilometer_version: kilo
     ceilometer_service_host: 172.10.10.108
     cinder_version: kilo
