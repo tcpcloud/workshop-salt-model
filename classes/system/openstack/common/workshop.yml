@@ -1,7 +1,7 @@
 parameters:
   _param:
     admin_email: root@localhost
-    cluster_public_host: 185.22.97.70
+    cluster_public_host: ""
     graphite_secret_key: password
     rabbitmq_monitor_password: password
     sensu_dashboard_password: workshop
