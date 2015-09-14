@@ -39,4 +39,4 @@ parameters:
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
   cinder:
     volume:
-      enabled: true
+      enabled: false
