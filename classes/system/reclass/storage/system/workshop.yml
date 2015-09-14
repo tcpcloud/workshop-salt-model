@@ -30,7 +30,7 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.102
             keepalived_vip_interface: eth0
-            keepalived_vip_priority: 101
+            keepalived_vip_priority: 102
             mysql_cluster_role: slave
             rabbitmq_cluster_role: slave
             opencontrail_database_id: 2
