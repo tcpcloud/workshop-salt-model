@@ -3,4 +3,4 @@ classes:
 parameters:
   cinder:
     controller:
-      enabled: true
+      enabled: false
