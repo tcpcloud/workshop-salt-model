@@ -1,4 +1,5 @@
 classes:
+- system.graphite.collector.single
 - system.graphite.server.single
 - system.sensu.client.remote
 - system.sensu.server.single
