@@ -9,12 +9,17 @@ parameters:
     # OVS setup
     ovs_cluster_name: workshop
     # OVS master nodes
+    # XXX: generate openvstorage id for each master node by running
+    #   openssl rand -base64 64 | tr -dc A-Z-a-z-0-9 | head -c 16
     cluster_master01_hostname: ovscmp01
     cluster_master01_address: 172.10.10.109
+    cluster_master01_id: iu3XkzZIn55tUXox
     cluster_master02_hostname: ovscmp02
     cluster_master02_address: 172.10.10.110
+    cluster_master02_id: v1ppECRpIasjYevx
     cluster_master03_hostname: ovscmp03
     cluster_master03_address: 172.10.10.111
+    cluster_master03_id: plGRCeNdPkSKXlmE
     # OVS extra nodes
     cluster_extra01_hostname: ovscmp04
     cluster_extra01_address: 172.10.10.112
