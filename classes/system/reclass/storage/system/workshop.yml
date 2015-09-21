@@ -122,7 +122,9 @@ parameters:
           parameters:
             openvstorage:
               server:
-                id: ${_param:cluster_master01_id}
+                # XXX: generate openvstorage id for each master node, see
+                # openvstorage/common/workshop.yml for details
+                id: iu3XkzZIn55tUXox
                 setup:
                   cluster:
                     join: false
@@ -145,7 +147,9 @@ parameters:
           parameters:
             openvstorage:
               server:
-                id: ${_param:cluster_master02_id}
+                # XXX: generate openvstorage id for each master node, see
+                # openvstorage/common/workshop.yml for details
+                id: v1ppECRpIasjYevx
         ovscmp03.workshop.cloudlab.cz:
           name: ovscmp03
           domain: workshop.cloudlab.cz
@@ -165,7 +169,9 @@ parameters:
           parameters:
             openvstorage:
               server:
-                id: ${_param:cluster_master03_id}
+                # XXX: generate openvstorage id for each master node, see
+                # openvstorage/common/workshop.yml for details
+                id: plGRCeNdPkSKXlmE
         ovscmp04.workshop.cloudlab.cz:
           name: ovscmp04
           domain: workshop.cloudlab.cz
