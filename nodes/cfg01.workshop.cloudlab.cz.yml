@@ -2,8 +2,6 @@ classes:
 - service.git.client
 - system.linux.system.single
 - system.salt.master.single
-#- system.salt.master.formula.billometer
-#- system.salt.master.formula.foreman
 - system.salt.master.formula.graphite
 - system.salt.master.formula.kedb
 - system.salt.master.formula.linux
@@ -12,6 +10,7 @@ classes:
 - system.salt.master.formula.sensu
 - system.reclass.storage.salt
 - system.reclass.storage.system.workshop
+- system.openstack.proxy.workshop
 parameters:
   _param:
     reclass_data_repository: "https://github.com/tcpcloud/workshop-salt-model.git"

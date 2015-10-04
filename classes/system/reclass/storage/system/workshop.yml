@@ -80,7 +80,7 @@ parameters:
           classes:
           - system.linux.system.single
           - system.horizon.server.single
-          - system.openstack.proxy.workshop
+#          - system.openstack.proxy.workshop
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.104
