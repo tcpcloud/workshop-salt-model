@@ -16,6 +16,7 @@ parameters:
     reclass_data_repository: "https://github.com/tcpcloud/workshop-salt-model.git"
     reclass_data_revision: master
     reclass_config_master: 172.10.10.100
+    single_address: 172.10.10.100
     salt_master_host: 127.0.0.1
     salt_master_base_environment: prd
     rabbitmq_monitor_password: password
