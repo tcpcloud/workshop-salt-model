@@ -31,7 +31,7 @@ parameters:
           secret_key: ${_param:horizon_tcpcloud_kilo_secret_key}
           source:
             engine: git
-            address: git@git.tcpcloud.eu:python-apps/horizon.git
+            address: https://git.tcpcloud.eu/python-apps/horizon.git
             revision: stable/kilo
           cache:
             engine: 'memcached'
@@ -54,13 +54,13 @@ parameters:
               - contrail_openstack_dashboard
               source:
                 engine: git
-                address: git@git.tcpcloud.eu:horizon-modules/horizon-overrides-plugin.git
+                address: https://git.tcpcloud.eu/horizon-modules/horizon-overrides-plugin.git
                 revision: develop
             contrail:
               app: contrail_openstack_dashboard
               source:
                 engine: git
-                address: git@git.tcpcloud.eu:horizon-modules/horizon-contrail-panels.git
+                address: https://git.tcpcloud.eu/horizon-modules/horizon-contrail-panels.git
                 revision: stable/kilo
             horizon_theme:
               app: horizon_theme
