@@ -1,6 +1,8 @@
 classes:
 - service.git.client
 - system.linux.system.single
+- system.horizon.server.multi
+- system.horizon.server.app.tcpcloud_kilo
 - system.salt.master.single
 - system.salt.master.formula.graphite
 - system.salt.master.formula.kedb

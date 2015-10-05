@@ -8,8 +8,8 @@ parameters:
           type: nginx_proxy
           name: openstack_web
           proxy:
-            host: web01
-            port: 80
+            host: localhost
+            port: 8078
             protocol: http
             websocket: true
           host:
