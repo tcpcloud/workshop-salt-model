@@ -1,6 +1,7 @@
 classes:
 - service.git.client
 - system.linux.system.single
+- system.openssh.client.workshop
 - system.horizon.server.multi
 - system.horizon.server.app.tcpcloud_kilo
 - system.salt.master.single
