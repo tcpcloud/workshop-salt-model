@@ -1,8 +1,6 @@
 parameters:
   _param:
     nginx_site_horizon_tcpcloud_kilo_host: _
-    horizon_tcpcloud_kilo_identity_host: ${_param:cluster_vip_address}
-    horizon_tcpcloud_kilo_identity_encryption: none
     horizon_tcpcloud_kilo_secret_key: workshop
   nginx:
     server:
@@ -12,7 +10,7 @@ parameters:
           type: horizon
           name: tcpcloud_kilo
           host:
-            name: ${_param:nginx_site_horizon_tcpcloud_kilo_host}
+            name: _
   supervisor:
     server:
       service:
@@ -40,8 +38,8 @@ parameters:
             prefix: 'CACHE_TCPCLOUD_KILO'
           identity:
             engine: keystone
-            host: ${_param:horizon_tcpcloud_kilo_identity_host}
-            encryption: ${_param:horizon_tcpcloud_kilo_identity_encryption}
+            host: ${_param:cluster_vip_address}
+            encryption: none
             port: 5000
             api_version: 3
           api_versions:
