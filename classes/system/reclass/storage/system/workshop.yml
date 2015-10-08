@@ -20,7 +20,7 @@ parameters:
             rabbitmq_cluster_role: master
             opencontrail_database_id: 1
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -50,7 +50,7 @@ parameters:
             rabbitmq_cluster_role: slave
             opencontrail_database_id: 2
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -72,7 +72,7 @@ parameters:
             rabbitmq_cluster_role: slave
             opencontrail_database_id: 3
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -90,7 +90,7 @@ parameters:
             opencontrail_compute_gateway: 172.10.10.1
             opencontrail_compute_iface: eth0
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -108,7 +108,7 @@ parameters:
             opencontrail_compute_gateway: 172.10.10.1
             opencontrail_compute_iface: eth0
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -136,7 +136,7 @@ parameters:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.107
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -152,7 +152,7 @@ parameters:
             single_address: 172.10.10.108
             ceilometer_database_host: 172.10.10.108
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -174,7 +174,7 @@ parameters:
             ovs_hypervisor_name: ovscmp01
             ovs_rabbitmq_cluster_role: master
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -228,7 +228,7 @@ parameters:
             ovs_hypervisor_name: ovscmp03
             ovs_rabbitmq_cluster_role: slave
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -256,7 +256,7 @@ parameters:
             ovs_hypervisor_name: ovscmp04
             ovs_rabbitmq_cluster_role: slave
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -274,7 +274,7 @@ parameters:
           params:
             salt_master_host: ${_param:reclass_config_master}
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -285,7 +285,7 @@ parameters:
                 addrepo: true
                 database:
                   engine: elasticsearch
-                  host: 10.0.69.9
+                  host: 172.10.10.116
                   port: 9200
         es1.workshop.cloudlab.cz:
           name: es1
@@ -302,7 +302,7 @@ parameters:
           params:
             salt_master_host: ${_param:reclass_config_master}
             heka_shipper_output_exchange: heka
-            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_host: 172.10.10.101
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
@@ -319,9 +319,9 @@ parameters:
           params:
             salt_master_host: ${_param:reclass_config_master}
             heka_router_input_exchange: heka
-            heka_router_input_host: 185.22.97.121
+            heka_router_input_host: 172.10.10.101
             heka_router_input_password: Use.toylett1823
             heka_router_input_vhost: heka
             heka_router_input_user: heka
-            heka_router_output_host: 10.0.69.10
+            heka_router_output_host: 172.10.10.116
 
