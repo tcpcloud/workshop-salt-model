@@ -264,7 +264,8 @@ parameters:
           name: kibana1
           domain: workshop.cloudlab.cz
           classes:
-          - service.linux.system
+          - service.linux.system.single
+          - system.linux.system.lowmem
           - service.openssh.server
           - service.ntp.client
           - system.openssh.server.team.tcpcloud
@@ -290,7 +291,8 @@ parameters:
           name: es1
           domain: workshop.cloudlab.cz
           classes:
-          - service.linux.system
+          - service.linux.system.single
+          - system.linux.system.lowmem
           - service.openssh.server
           - service.ntp.client
           - system.openssh.server.team.tcpcloud
@@ -308,7 +310,8 @@ parameters:
           name: heka-router1
           domain: workshop.cloudlab.cz
           classes:
-          - service.linux.system
+          - service.linux.system.single
+          - system.linux.system.lowmem
           - service.openssh.server
           - service.ntp.client
           - system.openssh.server.team.tcpcloud
