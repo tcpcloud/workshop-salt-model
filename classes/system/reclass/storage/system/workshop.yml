@@ -10,6 +10,7 @@ parameters:
           - system.openstack.control.workshop
           - service.galera.master.cluster
           - system.linux.system.lowmem
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.101
@@ -18,6 +19,11 @@ parameters:
             mysql_cluster_role: master
             rabbitmq_cluster_role: master
             opencontrail_database_id: 1
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
         ctl02.workshop.cloudlab.cz:
           name: ctl02
           domain: workshop.cloudlab.cz
@@ -26,6 +32,7 @@ parameters:
           - system.openstack.control.workshop
           - service.galera.slave.cluster
           - system.linux.system.lowmem
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.102
@@ -34,6 +41,11 @@ parameters:
             mysql_cluster_role: slave
             rabbitmq_cluster_role: slave
             opencontrail_database_id: 2
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
         ctl03.workshop.cloudlab.cz:
           name: ctl03
           domain: workshop.cloudlab.cz
@@ -42,6 +54,7 @@ parameters:
           - system.openstack.control.workshop
           - service.galera.slave.cluster
           - system.linux.system.lowmem
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.103
@@ -50,30 +63,47 @@ parameters:
             mysql_cluster_role: slave
             rabbitmq_cluster_role: slave
             opencontrail_database_id: 3
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
         cmp01.workshop.cloudlab.cz:
           name: cmp01
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
           - system.openstack.compute.workshop
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.105
             opencontrail_compute_address: 172.10.10.105
             opencontrail_compute_gateway: 172.10.10.1
             opencontrail_compute_iface: eth0
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
         cmp02.workshop.cloudlab.cz:
           name: cmp02
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
           - system.openstack.compute.workshop
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.106
             opencontrail_compute_address: 172.10.10.106
             opencontrail_compute_gateway: 172.10.10.1
             opencontrail_compute_iface: eth0
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
         web01.workshop.cloudlab.cz:
           name: web01
           domain: workshop.cloudlab.cz
@@ -82,6 +112,7 @@ parameters:
 #          - system.horizon.server.single
           - system.horizon.server.multi
           - system.horizon.server.app.tcpcloud_kilo
+          - service.heka.server.amqp.shipper
 #          - system.openstack.proxy.workshop
           params:
             salt_master_host: ${_param:reclass_config_master}
@@ -92,19 +123,31 @@ parameters:
           classes:
           - system.linux.system.single
           - system.openstack.monitor.workshop
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.107
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
         mtr01.workshop.cloudlab.cz:
           name: mtr01
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
           - system.openstack.meter.workshop
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.108
             ceilometer_database_host: 172.10.10.108
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
         ovscmp01.workshop.cloudlab.cz:
           name: ovscmp01
           domain: workshop.cloudlab.cz
@@ -113,6 +156,7 @@ parameters:
           - system.openssh.server.single
           - system.openvstorage.master.workshop
           - system.openstack.compute.workshop
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.109
@@ -121,6 +165,11 @@ parameters:
             opencontrail_compute_iface: eth0
             ovs_hypervisor_name: ovscmp01
             ovs_rabbitmq_cluster_role: master
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
           parameters:
             openvstorage:
               server:
@@ -138,6 +187,7 @@ parameters:
           - system.openssh.server.single
           - system.openvstorage.master.workshop
           - system.openstack.compute.workshop
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.110
@@ -160,6 +210,7 @@ parameters:
           - system.openssh.server.single
           - system.openvstorage.master.workshop
           - system.openstack.compute.workshop
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.111
@@ -168,6 +219,11 @@ parameters:
             opencontrail_compute_iface: eth0
             ovs_hypervisor_name: ovscmp03
             ovs_rabbitmq_cluster_role: slave
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
           parameters:
             openvstorage:
               server:
@@ -182,6 +238,7 @@ parameters:
           - system.openssh.server.single
           - system.openvstorage.extra.workshop
           - system.openstack.compute.workshop
+          - service.heka.server.amqp.shipper
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.112
@@ -190,3 +247,70 @@ parameters:
             opencontrail_compute_iface: eth0
             ovs_hypervisor_name: ovscmp04
             ovs_rabbitmq_cluster_role: slave
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
+        kibana1.workshop.cloudlab.cz:
+          name: kibana1
+          domain: workshop.cloudlab.cz
+          classes:
+          - service.linux.system
+          - service.openssh.server
+          - service.ntp.client
+          - system.openssh.server.team.tcpcloud
+          - service.heka.server.amqp.shipper
+          - service.kibana.server.single
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
+          parameters:
+            kibana:
+              server:
+                enabled: true
+                addrepo: true
+                database:
+                  engine: elasticsearch
+                  host: 10.0.69.9
+                  port: 9200
+        es1.workshop.cloudlab.cz:
+          name: es1
+          domain: workshop.cloudlab.cz
+          classes:
+          - service.linux.system
+          - service.openssh.server
+          - service.ntp.client
+          - system.openssh.server.team.tcpcloud
+          - service.heka.server.amqp.shipper
+          - service.elasticsearch.server.single
+          - service.java.environment.oracle7
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 185.22.97.121
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
+        heka-router1.workshop.cloudlab.cz:
+          name: heka-router1
+          domain: workshop.cloudlab.cz
+          classes:
+          - service.linux.system
+          - service.openssh.server
+          - service.ntp.client
+          - system.openssh.server.team.tcpcloud
+          - service.heka.server.amqp.router
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            heka_router_input_exchange: heka
+            heka_router_input_host: 185.22.97.121
+            heka_router_input_password: Use.toylett1823
+            heka_router_input_vhost: heka
+            heka_router_input_user: heka
+            heka_router_output_host: 10.0.69.10
+
