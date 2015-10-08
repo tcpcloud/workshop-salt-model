@@ -24,6 +24,14 @@ parameters:
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
+          parameters:
+            rabbitmq:
+              server:
+                host:
+                  heka:
+                    enabled: true
+                    user: heka
+                    password: 'Use.toylett1823'
         ctl02.workshop.cloudlab.cz:
           name: ctl02
           domain: workshop.cloudlab.cz
