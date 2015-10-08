@@ -11,6 +11,7 @@ classes:
 - system.salt.master.formula.openstack_core
 - system.salt.master.formula.saltstack
 - system.salt.master.formula.sensu
+- system.salt.master.formula.heka
 - system.reclass.storage.salt
 - system.reclass.storage.system.workshop
 - system.openstack.proxy.workshop
