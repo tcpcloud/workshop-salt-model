@@ -13,4 +13,7 @@ parameters:
             elasticsearch:
               source: pkg
               name: salt-formula-elasticsearch
+            java:
+              source: pkg
+              name: salt-formula-java
 
