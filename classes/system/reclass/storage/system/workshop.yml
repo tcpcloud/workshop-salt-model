@@ -294,7 +294,6 @@ parameters:
           - system.linux.system.lowmem
           - service.openssh.server
           - service.ntp.client
-          - system.openssh.server.team.tcpcloud
           - service.heka.server.amqp.shipper
           - service.elasticsearch.server.single
           - service.java.environment.oracle7
