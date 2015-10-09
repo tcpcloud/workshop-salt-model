@@ -311,7 +311,7 @@ parameters:
           - service.ntp.client
           - service.heka.server.amqp.shipper
           - service.elasticsearch.server.single
-          - service.java.environment.oracle7
+          - service.java.environment.oracle
           params:
             salt_master_host: ${_param:reclass_config_master}
             heka_shipper_output_exchange: heka
