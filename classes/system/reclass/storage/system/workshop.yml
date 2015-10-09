@@ -54,6 +54,14 @@ parameters:
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
+          parameters:
+            rabbitmq:
+              server:
+                host:
+                  heka:
+                    enabled: true
+                    user: heka
+                    password: 'Use.toylett1823'
         ctl03.workshop.cloudlab.cz:
           name: ctl03
           domain: workshop.cloudlab.cz
@@ -76,6 +84,14 @@ parameters:
             heka_shipper_output_password: Use.toylett1823
             heka_shipper_output_vhost: heka
             heka_shipper_output_user: heka
+          parameters:
+            rabbitmq:
+              server:
+                host:
+                  heka:
+                    enabled: true
+                    user: heka
+                    password: 'Use.toylett1823'
         cmp01.workshop.cloudlab.cz:
           name: cmp01
           domain: workshop.cloudlab.cz
