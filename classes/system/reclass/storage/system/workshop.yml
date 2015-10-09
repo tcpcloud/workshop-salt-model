@@ -291,7 +291,6 @@ parameters:
           name: es1
           domain: workshop.cloudlab.cz
           classes:
-          - system.linux.system.lowmem
           - service.openssh.server
           - service.ntp.client
           - service.heka.server.amqp.shipper
