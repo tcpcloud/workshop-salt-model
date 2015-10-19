@@ -22,7 +22,7 @@ parameters:
             admin_port: 8776
             admin_path: '/v1/$(tenant_id)s'
             public_protocol: http
-        cinder2:
+        cinderv2:
           type: volumev2
           description: OpenStack Volume Service v2.0
           bind:
