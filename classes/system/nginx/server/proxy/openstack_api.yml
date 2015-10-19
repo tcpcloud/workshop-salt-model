@@ -14,9 +14,6 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 5000
             protocol: http
-            filter:
-              search: ${_param:nginx_proxy_openstack_api_proxy_host}
-              replace: ${_param:nginx_proxy_openstack_api_host}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 5000
@@ -28,9 +25,6 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 35357
             protocol: http
-            filter:
-              search: ${_param:nginx_proxy_openstack_api_proxy_host}
-              replace: ${_param:nginx_proxy_openstack_api_host}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 35357
@@ -42,9 +36,6 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 8774
             protocol: http
-            filter:
-              search: ${_param:nginx_proxy_openstack_api_proxy_host}
-              replace: ${_param:nginx_proxy_openstack_api_host}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 8774
@@ -56,9 +47,6 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 8776
             protocol: http
-            filter:
-              search: ${_param:nginx_proxy_openstack_api_proxy_host}
-              replace: ${_param:nginx_proxy_openstack_api_host}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 8776
@@ -70,9 +58,6 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 9292
             protocol: http
-            filter:
-              search: ${_param:nginx_proxy_openstack_api_proxy_host}
-              replace: ${_param:nginx_proxy_openstack_api_host}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 9292
@@ -84,9 +69,6 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 9696
             protocol: http
-            filter:
-              search: ${_param:nginx_proxy_openstack_api_proxy_host}
-              replace: ${_param:nginx_proxy_openstack_api_host}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 9696
@@ -98,9 +80,6 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 8000
             protocol: http
-            filter:
-              search: ${_param:nginx_proxy_openstack_api_proxy_host}
-              replace: ${_param:nginx_proxy_openstack_api_host}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 8000
@@ -112,9 +91,6 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 8004
             protocol: http
-            filter:
-              search: ${_param:nginx_proxy_openstack_api_proxy_host}
-              replace: ${_param:nginx_proxy_openstack_api_host}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 8004
@@ -126,9 +102,6 @@ parameters:
             host: ${_param:nginx_proxy_openstack_api_proxy_host}
             port: 8773
             protocol: http
-            filter:
-              search: ${_param:nginx_proxy_openstack_api_proxy_host}
-              replace: ${_param:nginx_proxy_openstack_api_host}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 8773
