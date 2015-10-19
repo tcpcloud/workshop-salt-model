@@ -133,14 +133,17 @@ parameters:
           domain: workshop.cloudlab.cz
           classes:
           - system.linux.system.single
-#          - system.horizon.server.single
-          - system.horizon.server.multi
-          - system.horizon.server.app.tcpcloud_kilo
+          - system.horizon.server.single
           - service.heka.server.amqp.shipper
-#          - system.openstack.proxy.workshop
+          - system.openstack.proxy.workshop
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.104
+            heka_shipper_output_exchange: heka
+            heka_shipper_output_host: 172.10.10.101
+            heka_shipper_output_password: Use.toylett1823
+            heka_shipper_output_vhost: heka
+            heka_shipper_output_user: heka
         mon01.workshop.cloudlab.cz:
           name: mon01
           domain: workshop.cloudlab.cz
