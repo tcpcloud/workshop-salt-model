@@ -7,5 +7,5 @@ parameters:
       theme: tcp
       bind:
         # Horizon is proxied by Nginx
-        host: 127.0.0.1
+        address: 127.0.0.1
         port: 8078
