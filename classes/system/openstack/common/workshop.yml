@@ -27,23 +27,23 @@ parameters:
     rabbitmq_admin_password: workshop
     rabbitmq_openstack_password: workshop
     rabbitmq_cold_password: workshop
-    glance_version: liberty
+    glance_version: juno
     glance_service_host: ${_param:cluster_vip_address}
-    keystone_version: liberty
+    keystone_version: juno
     keystone_service_host: ${_param:cluster_vip_address}
-    heat_version: liberty
+    heat_version: juno
     heat_service_host: ${_param:cluster_vip_address}
     heat_domain_admin_password: workshop
-    ceilometer_version: liberty
+    ceilometer_version: juno
     ceilometer_service_host: 172.10.10.108
-    cinder_version: liberty
+    cinder_version: juno
     cinder_service_host: ${_param:cluster_vip_address}
     ceilometer_graphite_publisher_host: 172.10.10.107
     ceilometer_graphite_publisher_port: 2013
-    nova_version: liberty
+    nova_version: juno
     nova_service_host: ${_param:cluster_vip_address}
     nova_vncproxy_url: http://${_param:cluster_vip_address}:8060
-    neutron_version: liberty
+    neutron_version: juno
     neutron_service_host: ${_param:cluster_vip_address}
     glusterfs_service_host: ${_param:cluster_vip_address}
     mysql_admin_user: root
@@ -65,7 +65,7 @@ parameters:
     keystone_neutron_password: workshop
     keystone_nova_password: workshop
     ceilometer_secret_key: workshop
-    horizon_version: liberty
+    horizon_version: juno
     horizon_secret_key: opaesee8Que2yahJoh9fo0eefo1Aeyo6ahyei8zeiboh3aeth5loth7ieNa5xi5e
     horizon_identity_host: ${_param:cluster_vip_address}
     horizon_identity_encryption: none
