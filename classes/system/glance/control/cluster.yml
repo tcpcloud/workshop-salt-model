@@ -3,6 +3,9 @@ classes:
 - service.haproxy.proxy.single
 - system.glance.control.storage.glusterfs
 parameters:
+  glance:
+    server:
+      notification: true
   mysql:
     server:
       database:
