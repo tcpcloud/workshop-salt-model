@@ -80,3 +80,7 @@ parameters:
         name: heat_domain_admin
         password: ${_param:heat_domain_admin_password}
         domain: heat
+      logging:
+        heka:
+          enabled: true
+

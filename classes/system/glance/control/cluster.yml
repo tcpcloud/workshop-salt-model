@@ -6,6 +6,9 @@ parameters:
   glance:
     server:
       notification: true
+      logging:
+        heka:
+          enabled: true
   mysql:
     server:
       database:

@@ -49,3 +49,7 @@ parameters:
           port: 11211
         - host: ${_param:cluster_node03_address}
           port: 11211
+      logging:
+        heka:
+          enabled: true
+

@@ -40,3 +40,7 @@ parameters:
   cinder:
     volume:
       enabled: false
+      logging:
+        heka:
+          enabled: true
+
