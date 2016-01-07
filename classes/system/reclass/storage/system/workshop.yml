@@ -143,8 +143,8 @@ parameters:
           - system.openstack.compute.workshop
           params:
             salt_master_host: ${_param:reclass_config_master}
-            single_address: 172.10.10.110
-            opencontrail_compute_address: 172.10.10.110
+            single_address: 172.10.10.116
+            opencontrail_compute_address: 172.10.10.116
             opencontrail_compute_gateway: 172.10.10.1
             opencontrail_compute_iface: eth0
             ovs_hypervisor_name: ovscmp02
@@ -205,5 +205,5 @@ parameters:
           - system.openstack.log.single
           params:
             salt_master_host: ${_param:reclass_config_master}
-            single_address: 172.10.10.113
+            single_address: 172.10.10.110
 
