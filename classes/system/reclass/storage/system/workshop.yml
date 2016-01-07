@@ -194,7 +194,7 @@ parameters:
             ovs_hypervisor_name: ovscmp04
             ovs_rabbitmq_cluster_role: slave
         log01.workshop.cloudlab.cz:
-          name: kibana1
+          name: log01
           domain: workshop.cloudlab.cz
           classes:
           - service.linux.system.single
