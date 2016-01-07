@@ -117,3 +117,9 @@ parameters:
           names:
           - mtr01
           - mtr01.workshop.cloudlab.cz
+        log01:
+          address: 172.10.10.110
+          names:
+          - log01
+          - log01.workshop.cloudlab.cz
+
