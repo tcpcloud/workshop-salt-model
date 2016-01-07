@@ -5,6 +5,7 @@ classes:
 - system.collectd.client.carbon
 - system.sensu.client.single
 - system.openssh.server.single
+- system.heka.shipper.single
 parameters:
   linux:
     system:
@@ -17,3 +18,7 @@ parameters:
           pin:
             - priority: 900
               pin: 'origin "apt.tcpcloud.eu"'
+  _param:
+    heka_amqp_host: 172.10.10.113
+    heka_amqp_password: Use.toylett1823
+    heka_elasticsearch_host: 172.10.10.113
