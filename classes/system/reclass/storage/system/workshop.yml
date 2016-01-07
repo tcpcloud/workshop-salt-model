@@ -201,7 +201,6 @@ parameters:
           - system.linux.system.lowmem
           - service.openssh.server
           - service.ntp.client
-          - system.openssh.server.team.tcpcloud
           - system.openstack.log.single
           params:
             salt_master_host: ${_param:reclass_config_master}
