@@ -197,7 +197,7 @@ parameters:
           name: log01
           domain: workshop.cloudlab.cz
           classes:
-          - service.linux.system.single
+          - system.linux.system.single
           - system.linux.system.lowmem
           - service.openssh.server
           - service.ntp.client
