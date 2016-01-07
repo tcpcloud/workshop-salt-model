@@ -9,6 +9,7 @@ Reclass model for:
 * 2x Openstack compute nodes
 * 1x Ceilometer, Graphite metering nodes
 * 1x Sensu monitoring node
+* 1x Heka, ElasticSearch, Kibana node
 
 Instructions
 ============
