@@ -19,6 +19,6 @@ parameters:
             - priority: 900
               pin: 'origin "apt.tcpcloud.eu"'
   _param:
-    heka_amqp_host: 172.10.10.113
+    heka_amqp_host: 172.10.10.110
     heka_amqp_password: Use.toylett1823
-    heka_elasticsearch_host: 172.10.10.113
+    heka_elasticsearch_host: 172.10.10.110
