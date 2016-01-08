@@ -1,0 +1,16 @@
+parameters:
+  nginx:
+    server:
+      enabled: true
+      site:
+        nginx_proxy_freeipa:
+          enabled: true
+          type: nginx_proxy
+          name: freeipa
+          proxy:
+            host: 172.10.10.191
+            port: 443
+            protocol: https
+          host:
+            name: ${_param:cluster_public_host}
+            port: 8443
