@@ -24,6 +24,18 @@ parameters:
             - priority: 600
               package: freeipa-server
               pin: 'release a=unstable'
+    network:
+      host:
+        idm01:
+          address: 172.10.10.191
+          names:
+          - idm01
+          - idm01.workshop.cloudlab.cz
+        idm02:
+          address: 172.10.10.192
+          names:
+          - idm02
+          - idm02.workshop.cloudlab.cz
   openssh:
     server:
       public_key_auth: true
