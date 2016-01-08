@@ -209,10 +209,10 @@ parameters:
           name: idm01
           domain: workshop.cloudlab.cz
           classes:
-          - system.linux.system.lowmem
           - service.linux.system
           - service.salt.minion.master
           - system.openssh.server.single
+          - system.freeipa.server.cluster
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.191
@@ -220,10 +220,10 @@ parameters:
           name: idm02
           domain: workshop.cloudlab.cz
           classes:
-          - system.linux.system.lowmem
           - service.linux.system
           - service.salt.minion.master
           - system.openssh.server.single
+          - system.freeipa.server.cluster
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 172.10.10.192

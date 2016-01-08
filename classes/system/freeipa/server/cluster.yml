@@ -5,6 +5,9 @@ parameters:
     server:
       realm: WORKSHOP.CLOUDLAB.CZ
       domain: workshop.cloudlab.cz
+      servers:
+        - idm01.workshop.cloudlab.cz
+        - idm02.workshop.cloudlab.cz
       admin:
         password: cloudlab
       ldap:
@@ -21,3 +24,11 @@ parameters:
             - priority: 600
               package: freeipa-server
               pin: 'release a=unstable'
+  openssh:
+    server:
+      public_key_auth: true
+      gssapi_auth: true
+      kerberos_auth: false
+      authorized_keys_command:
+        command: /usr/bin/sss_ssh_authorizedkeys
+        user: nobody
