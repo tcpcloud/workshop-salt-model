@@ -25,3 +25,6 @@ parameters:
             openssh:
               source: pkg
               name: salt-formula-openssh
+            freeipa:
+              source: pkg
+              name: salt-formula-freeipa

@@ -1,0 +1,23 @@
+classes:
+  - service.freeipa.server
+parameters:
+  freeipa:
+    server:
+      realm: WORKSHOP.CLOUDLAB.CZ
+      domain: workshop.cloudlab.cz
+      admin:
+        password: cloudlab
+      ldap:
+        password: cloudlab
+  linux:
+    system:
+      repo:
+        unstable:
+          source: "deb http://ftp.cz.debian.org/debian/ unstable main contrib non-free"
+          architectures: amd64
+          pin:
+            - priority: 100
+              pin: 'release a=unstable'
+            - priority: 600
+              package: freeipa-server
+              pin: 'release a=unstable'

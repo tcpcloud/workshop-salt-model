@@ -1,0 +1,21 @@
+classes:
+- service.freeipa.client
+parameters:
+  freeipa:
+    client:
+      enabled: true
+      hostname: ${linux:network:fqdn}
+      servers:
+        - idm01.workshop.cloudlab.cz
+        - idm02.workshop.cloudlab.cz
+      domain: ${linux:system:domain}
+      realm: WORKSHOP.CLOUDLAB.CZ
+      otp: cloudlab
+  openssh:
+    server:
+      public_key_auth: true
+      gssapi_auth: true
+      kerberos_auth: false
+      authorized_keys_command:
+        command: /usr/bin/sss_ssh_authorizedkeys
+        user: nobody
