@@ -2,8 +2,6 @@ classes:
 - service.git.client
 - system.linux.system.single
 - system.openssh.client.workshop
-- system.horizon.server.multi
-- system.horizon.server.app.tcpcloud_kilo
 - system.salt.master.single
 - system.salt.master.formula.graphite
 - system.salt.master.formula.kedb
@@ -14,7 +12,6 @@ classes:
 - system.salt.master.formula.heka
 - system.reclass.storage.salt
 - system.reclass.storage.system.workshop
-- system.openstack.proxy.workshop
 parameters:
   _param:
     reclass_data_repository: "https://github.com/tcpcloud/workshop-salt-model.git"
