@@ -20,3 +20,12 @@ parameters:
       authorized_keys_command:
         command: /usr/bin/sss_ssh_authorizedkeys
         user: nobody
+  linux:
+    network:
+      resolv:
+        dns:
+          - 172.10.10.191
+          - 172.10.10.192
+        domain: workshop.cloudlab.cz
+        search:
+          - ${linux:network:resolv:domain}
