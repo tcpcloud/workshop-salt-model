@@ -5,9 +5,9 @@ parameters:
     client:
       enabled: true
       hostname: ${linux:network:fqdn}
-      server: ${freeipa:client:servers:0}
+      server: idm01.workshop.cloudlab.cz
       servers:
-        - idm01.workshop.cloudlab.cz
+        - ${freeipa:client:server}
         - idm02.workshop.cloudlab.cz
       domain: ${linux:system:domain}
       realm: WORKSHOP.CLOUDLAB.CZ
