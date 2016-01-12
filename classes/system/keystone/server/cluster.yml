@@ -11,6 +11,7 @@ parameters:
         engine: fernet
       domain:
         workshop:
+          description: "Workshop domain"
           backend: ldap
           assignment:
             backend: sql
