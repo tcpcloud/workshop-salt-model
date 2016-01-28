@@ -1,0 +1,28 @@
+parameters:
+  reclass:
+    storage:
+      node:
+        control.openstack.local:
+          name: control
+          domain: openstack.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.control.single
+          - system.linux.system.lowmem
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.201
+            opencontrail_database_id: 1
+        compute.openstack.local:
+          name: compute
+          domain: openstack.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.compute.single
+          - system.linux.system.lowmem
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.202
+            opencontrail_compute_address: 10.10.10.202
+            opencontrail_compute_gateway: 10.10.10.1
+            opencontrail_compute_iface: eth0

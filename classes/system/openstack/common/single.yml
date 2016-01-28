@@ -1,0 +1,69 @@
+parameters:
+  _param:
+    admin_email: root@localhost
+    cluster_public_host: _
+    graphite_secret_key: password
+    carbon_message_queue_host: ${_param:single_address}
+    opencontrail_version: 2.2
+    opencontrail_compute_dns: 8.8.8.8
+    opencontrail_stats_password: password
+    cluster_domain: cloudlab.cz
+    rabbitmq_secret_key: password
+    rabbitmq_admin_password: password
+    rabbitmq_openstack_password: password
+    rabbitmq_cold_password: password
+    glance_version: kilo
+    glance_service_host: ${_param:single_address}
+    keystone_version: kilo
+    keystone_service_host: ${_param:single_address}
+    heat_version: kilo
+    heat_service_host: ${_param:single_address}
+    heat_domain_admin_password: password
+    ceilometer_version: kilo
+    ceilometer_service_host: 172.10.20.108
+    cinder_version: kilo
+    cinder_service_host: ${_param:single_address}
+    nova_version: kilo
+    nova_service_host: ${_param:single_address}
+    nova_vncproxy_url: http://${_param:single_address}:8060
+    neutron_version: kilo
+    neutron_service_host: ${_param:single_address}
+    glusterfs_service_host: ${_param:single_address}
+    mysql_admin_user: root
+    mysql_admin_password: password
+    mysql_cinder_password: password
+    mysql_ceilometer_password: password
+    mysql_glance_password: password
+    mysql_heat_password: password
+    mysql_keystone_password: password
+    mysql_neutron_password: password
+    mysql_nova_password: password
+    keystone_service_token: password
+    keystone_admin_password: password
+    keystone_ceilometer_password: password
+    keystone_cinder_password: password
+    keystone_glance_password: password
+    keystone_heat_password: password
+    keystone_keystone_password: password
+    keystone_neutron_password: password
+    keystone_nova_password: password
+    ceilometer_secret_key: password
+    horizon_version: liberty
+    horizon_secret_key: password
+    horizon_identity_host: ${_param:single_address}
+    horizon_identity_encryption: none
+    horizon_identity_version: 3
+    mongodb_server_replica_set: ceilometer
+    mongodb_ceilometer_password: cloudlab
+    mongodb_admin_password: cloudlab
+    mongodb_shared_key: password
+  linux:
+    system:
+      package:
+        nfs-common:
+          version: latest
+      repo:
+        tcpcloud_openstack:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:keystone_version}"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
