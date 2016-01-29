@@ -1,0 +1,18 @@
+classes:
+- service.nova.control.single
+parameters:
+  mysql:
+    server:
+      database:
+        nova:
+          encoding: utf8
+          users:
+          - name: nova
+            password: ${_param:mysql_nova_password}
+            host: '%'
+            rights: all
+          - name: nova
+            password: ${_param:mysql_nova_password}
+            host: ${_param:single_address}
+            rights: all
+
