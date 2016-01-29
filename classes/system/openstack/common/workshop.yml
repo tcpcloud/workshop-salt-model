@@ -1,3 +1,7 @@
+classes:
+- system.collectd.client.carbon
+- system.sensu.client.single
+- system.heka.shipper.single
 parameters:
   _param:
     admin_email: root@localhost
