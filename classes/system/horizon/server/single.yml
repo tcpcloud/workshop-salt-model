@@ -4,8 +4,18 @@ classes:
 parameters:
   horizon:
     server:
-      theme: tcp
       bind:
         # Horizon is proxied by Nginx
         address: 127.0.0.1
         port: 8078
+      plugin:
+        horizon_theme:
+          theme_name: tcp
+          source:
+            engine: pkg
+            name: openstack-dashboard-tcp-theme
+        contrail:
+          source:
+            engine: pkg
+            name: openstack-dashboard-contrail-panels
+
