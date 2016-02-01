@@ -38,8 +38,13 @@ parameters:
             port: 8776
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
   cinder:
+    controller:
+      default_volume_type: ""
+      backend: {}
     volume:
       enabled: false
+      default_volume_type: ""
+      backend: {}
       logging:
         heka:
           enabled: true
