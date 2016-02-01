@@ -6,6 +6,12 @@ classes:
 - service.ceilometer.agent.publisher.graphite
 parameters:
   linux:
+    system:
+      kernel:
+        type: generic
+        headers: true
+        version: 3.19.0-26
+        extra: true
     storage:
       multipath: false
   nova:
