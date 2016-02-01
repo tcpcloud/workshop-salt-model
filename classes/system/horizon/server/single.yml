@@ -4,7 +4,6 @@ classes:
 parameters:
   horizon:
     server:
-      theme: tcp
       bind:
         # Horizon is proxied by Nginx
         address: 127.0.0.1
