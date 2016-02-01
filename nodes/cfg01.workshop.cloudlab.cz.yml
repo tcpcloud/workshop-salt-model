@@ -12,6 +12,8 @@ classes:
 - system.salt.master.formula.heka
 - system.reclass.storage.salt
 - system.reclass.storage.system.workshop
+- system.horizon.server.single
+- system.openstack.proxy.workshop
 parameters:
   _param:
     reclass_data_repository: "https://github.com/tcpcloud/workshop-salt-model.git"
