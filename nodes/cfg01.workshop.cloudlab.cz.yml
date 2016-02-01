@@ -30,6 +30,9 @@ parameters:
     system:
       name: cfg01
       domain: workshop.cloudlab.cz
+      repo:
+        tcpcloud:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty main security extra tcp tcp-salt liberty oc22 galera-s9s"
   salt:
     master:
       accept_policy: open_mode
