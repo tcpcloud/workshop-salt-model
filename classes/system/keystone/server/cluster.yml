@@ -9,14 +9,17 @@ parameters:
     server:
       tokens:
         engine: fernet
-      backend: ldap
-      assignment:
-        backend: sql
-      ldap:
-        url: "ldaps://idm01.workshop.cloudlab.cz"
-        suffix: "dc=workshop,dc=cloudlab,dc=cz"
-        uid: admin
-        password: workshop
+      domain:
+        workshop:
+          description: "Workshop domain"
+          backend: ldap
+          assignment:
+            backend: sql
+          ldap:
+            url: "ldaps://idm01.workshop.cloudlab.cz"
+            suffix: "dc=workshop,dc=cloudlab,dc=cz"
+            uid: keystone
+            password: cloudlab
   mysql:
     server:
       database:
