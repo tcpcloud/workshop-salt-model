@@ -1,6 +1,5 @@
 classes:
 - service.horizon.server.single
-- system.openstack.common.workshop
 parameters:
   horizon:
     server:
