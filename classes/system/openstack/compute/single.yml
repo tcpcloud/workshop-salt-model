@@ -1,5 +1,7 @@
 classes:
 - system.openstack.common.single
+- system.nova.compute.single
+- system.opencontrail.compute.single
 parameters:
   linux:
     system:
@@ -8,3 +10,5 @@ parameters:
           source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty kilo oc22"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
+    storage:
+      multipath: false
