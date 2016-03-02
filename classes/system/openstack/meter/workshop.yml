@@ -18,6 +18,12 @@ parameters:
           address: ${_param:cluster_node03_address}
           names:
           - ${_param:cluster_node03_hostname}
+    system:
+      repo:
+        tcpcloud_openstack:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:keystone_version}"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
   mongodb:
     server:
       database:

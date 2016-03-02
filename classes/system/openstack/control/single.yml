@@ -16,6 +16,17 @@ classes:
 - system.opencontrail.control.single
 - system.openstack.common.single
 parameters:
+  linux:
+    system:
+      repo:
+        tcpcloud_openstack:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:keystone_version} galera-s9s"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
+        tcpcloud_opencontrail:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty oc22"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
   keystone:
     server:
       admin_email: stackmaster@domain.com
@@ -53,11 +64,4 @@ parameters:
       public_networks: []
       contrail:
         version: ${_param:opencontrail_version}
-  linux:
-    system:
-      repo:
-        tcpcloud_opencontrail:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty kilo oc22"
-          architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
 

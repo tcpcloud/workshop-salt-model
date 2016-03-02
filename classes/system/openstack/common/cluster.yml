@@ -58,7 +58,7 @@ parameters:
     keystone_neutron_password: workshop
     keystone_nova_password: workshop
     ceilometer_secret_key: workshop
-    horizon_version: kilo
+    horizon_version: liberty
     horizon_secret_key: workshop
     horizon_identity_host: ${_param:cluster_vip_address}
     horizon_identity_encryption: none

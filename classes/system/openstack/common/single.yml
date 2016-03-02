@@ -2,6 +2,7 @@ parameters:
   _param:
     cluster_public_host: _
     cluster_vip_address: 10.10.10.201
+    control_address: 10.10.10.201
     admin_email: root@localhost
     cluster_public_host: _
     graphite_secret_key: password
@@ -21,8 +22,6 @@ parameters:
     heat_version: kilo
     heat_service_host: ${_param:single_address}
     heat_domain_admin_password: password
-    ceilometer_version: kilo
-    ceilometer_service_host: 172.10.20.108
     cinder_version: kilo
     cinder_service_host: ${_param:single_address}
     nova_version: kilo
@@ -59,17 +58,11 @@ parameters:
     mongodb_ceilometer_password: cloudlab
     mongodb_admin_password: cloudlab
     mongodb_shared_key: password
-    control_address: 10.10.10.201
   linux:
     system:
       package:
         nfs-common:
           version: latest
-      repo:
-        tcpcloud_openstack:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:keystone_version}"
-          architectures: amd64
-          key_url: "http://apt.tcpcloud.eu/public.gpg"
     network:
       host:
         control:
@@ -80,10 +73,10 @@ parameters:
         compute:
           address: 10.10.10.202
           names:
-          - control
-          - control.openstack.local
+          - compute
+          - compute.openstack.local
         proxy:
-          address: 10.10.10.201
+          address: 10.10.10.203
           names:
-          - control
-          - control.openstack.local
+          - proxy
+          - proxy.openstack.local

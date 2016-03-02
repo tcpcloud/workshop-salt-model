@@ -8,13 +8,10 @@ parameters:
     system:
       repo:
         tcpcloud:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty main security extra tcp tcp-salt kilo oc22 galera-s9s"
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty main security extra tcp tcp-salt"
           architectures: amd64
           default: true
           key_url: "http://apt.tcpcloud.eu/public.gpg"
-          pin:
-            - priority: 900
-              pin: 'origin "apt.tcpcloud.eu"'
   _param:
     heka_amqp_host: 172.10.10.110
     heka_amqp_password: Use.toylett1823
