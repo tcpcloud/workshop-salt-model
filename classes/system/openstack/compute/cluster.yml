@@ -1,0 +1,13 @@
+classes:
+- system.nova.compute.cluster
+- system.opencontrail.compute.cluster
+- system.openstack.common.cluster
+parameters:
+  linux:
+    storage:
+      multipath: false
+  nova:
+    compute:
+      vncproxy_url: http://${_param:cluster_vip_address}:6080
+      notification:
+        driver: messagingv2

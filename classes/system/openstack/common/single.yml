@@ -67,3 +67,20 @@ parameters:
           source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:keystone_version}"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
+    network:
+      host:
+        control:
+          address: 10.10.10.201
+          names:
+          - control
+          - control.openstack.local
+        compute:
+          address: 10.10.10.202
+          names:
+          - control
+          - control.openstack.local
+        proxy:
+          address: 10.10.10.201
+          names:
+          - control
+          - control.openstack.local

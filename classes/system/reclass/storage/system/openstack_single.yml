@@ -2,6 +2,15 @@ parameters:
   reclass:
     storage:
       node:
+        proxy.openstack.local:
+          name: proxy
+          domain: openstack.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.proxy.single
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.100
         control.openstack.local:
           name: control
           domain: openstack.local

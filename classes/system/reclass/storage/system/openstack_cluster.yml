@@ -1,0 +1,85 @@
+parameters:
+  reclass:
+    storage:
+      node:
+        proxy.openstack-ha.local:
+          name: proxy
+          domain: openstack-ha.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.proxy.cluster
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.100
+        control01.openstack-ha.local:
+          name: control01
+          domain: openstack-ha.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.control.cluster
+          - service.galera.master.cluster
+          - system.linux.system.lowmem
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.201
+            keepalived_vip_interface: eth0
+            keepalived_vip_priority: 103
+            mysql_cluster_role: master
+            rabbitmq_cluster_role: master
+            opencontrail_database_id: 1
+        control02.openstack-ha.local:
+          name: control02
+          domain: openstack-ha.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.control.cluster
+          - service.galera.slave.cluster
+          - system.linux.system.lowmem
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.202
+            keepalived_vip_interface: eth0
+            keepalived_vip_priority: 102
+            mysql_cluster_role: slave
+            rabbitmq_cluster_role: slave
+            opencontrail_database_id: 2
+        control03.openstack-ha.local:
+          name: control03
+          domain: openstack-ha.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.control.workshop
+          - service.galera.slave.cluster
+          - system.linux.system.lowmem
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.203
+            keepalived_vip_interface: eth0
+            keepalived_vip_priority: 101
+            mysql_cluster_role: slave
+            rabbitmq_cluster_role: slave
+            opencontrail_database_id: 3
+        compute01.openstack-ha.local:
+          name: compute01
+          domain: openstack-ha.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.compute.workshop
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.211
+            opencontrail_compute_address: 10.10.10.211
+            opencontrail_compute_gateway: 10.10.10.254
+            opencontrail_compute_iface: eth0
+        compute02.openstack-ha.local:
+          name: compute02
+          domain: openstack-ha.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.compute.workshop
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.212
+            opencontrail_compute_address: 10.10.10.212
+            opencontrail_compute_gateway: 10.10.10.254
+            opencontrail_compute_iface: eth0
