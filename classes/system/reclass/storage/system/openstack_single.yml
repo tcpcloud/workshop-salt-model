@@ -8,6 +8,7 @@ parameters:
           classes:
           - system.linux.system.single
           - system.openstack.proxy.single
+          - system.horizon.server.single
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 10.10.10.100
