@@ -1,5 +1,7 @@
 parameters:
   _param:
+    cluster_public_host: _
+    cluster_vip_address: 10.10.10.201
     admin_email: root@localhost
     cluster_public_host: _
     graphite_secret_key: password
@@ -57,6 +59,7 @@ parameters:
     mongodb_ceilometer_password: cloudlab
     mongodb_admin_password: cloudlab
     mongodb_shared_key: password
+    control_address: 10.10.10.201
   linux:
     system:
       package:
