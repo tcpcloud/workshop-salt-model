@@ -1,7 +1,3 @@
-classes:
-- system.collectd.client.carbon
-- system.sensu.client.single
-- system.heka.shipper.single
 parameters:
   _param:
     admin_email: root@localhost
@@ -82,7 +78,7 @@ parameters:
           - control03
           - control03.openstack-ha.local
         proxy:
-          address: 10.10.10.100
+          address: 10.10.10.204
           names:
           - proxy
           - proxy.openstack-ha.local
