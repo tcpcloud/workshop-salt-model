@@ -11,7 +11,7 @@ parameters:
     system:
       repo:
         tcpcloud_horizon:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:horizon_version}"
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty ${_param:horizon_version}"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
 
