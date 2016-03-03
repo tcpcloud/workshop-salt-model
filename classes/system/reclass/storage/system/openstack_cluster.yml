@@ -10,7 +10,7 @@ parameters:
           - system.openstack.proxy.cluster
           params:
             salt_master_host: ${_param:reclass_config_master}
-            single_address: 10.10.10.100
+            single_address: 10.10.10.204
         control01.openstack-ha.local:
           name: control01
           domain: openstack-ha.local
@@ -83,13 +83,4 @@ parameters:
             opencontrail_compute_address: 10.10.10.212
             opencontrail_compute_gateway: 10.10.10.254
             opencontrail_compute_iface: eth0
-        proxy.openstack-ha.local:
-          name: proxy
-          domain: openstack-ha.local
-          classes:
-          - system.linux.system.single
-          - system.openstack.proxy.cluster
-          params:
-            salt_master_host: ${_param:reclass_config_master}
-            single_address: 10.10.10.204
 
