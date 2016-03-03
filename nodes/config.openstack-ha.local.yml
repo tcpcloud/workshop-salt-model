@@ -20,13 +20,12 @@ parameters:
     salt_master_host: 127.0.0.1
     salt_master_base_environment: prd
     rabbitmq_monitor_password: password
-    sensu_message_queue_host: 10.10.10.200
     collectd_backend_carbon_host: 10.10.10.200
     collectd_backend_carbon_port: 2013
   linux:
     system:
       name: config
-      domain: openstack.local
+      domain: openstack-ha.local
   salt:
     master:
       accept_policy: open_mode
