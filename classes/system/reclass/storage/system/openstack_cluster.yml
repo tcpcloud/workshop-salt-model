@@ -48,7 +48,7 @@ parameters:
           domain: openstack-ha.local
           classes:
           - system.linux.system.single
-          - system.openstack.control.workshop
+          - system.openstack.control.cluster
           - service.galera.slave.cluster
           - system.linux.system.lowmem
           params:
@@ -64,7 +64,7 @@ parameters:
           domain: openstack-ha.local
           classes:
           - system.linux.system.single
-          - system.openstack.compute.workshop
+          - system.openstack.compute.cluster
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 10.10.10.211
@@ -76,10 +76,20 @@ parameters:
           domain: openstack-ha.local
           classes:
           - system.linux.system.single
-          - system.openstack.compute.workshop
+          - system.openstack.compute.cluster
           params:
             salt_master_host: ${_param:reclass_config_master}
             single_address: 10.10.10.212
             opencontrail_compute_address: 10.10.10.212
             opencontrail_compute_gateway: 10.10.10.254
             opencontrail_compute_iface: eth0
+        proxy.openstack-ha.local:
+          name: proxy
+          domain: openstack-ha.local
+          classes:
+          - system.linux.system.single
+          - system.openstack.proxy.cluster
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.204
+
