@@ -1,0 +1,32 @@
+classes:
+- service.git.client
+- system.linux.system.single
+- system.openssh.client.workshop
+- system.salt.master.single
+- system.salt.master.formula.graphite
+- system.salt.master.formula.linux
+- system.salt.master.formula.openstack_core
+- system.salt.master.formula.saltstack
+- system.salt.master.formula.sensu
+- system.salt.master.formula.heka
+- system.reclass.storage.salt
+- system.reclass.storage.system.openstack_single
+parameters:
+  _param:
+    reclass_data_repository: "https://github.com/tcpcloud/workshop-salt-model.git"
+    reclass_data_revision: master
+    reclass_config_master: 10.10.10.200
+    single_address: 10.10.10.200
+    salt_master_host: 127.0.0.1
+    salt_master_base_environment: prd
+    rabbitmq_monitor_password: password
+    sensu_message_queue_host: 10.10.10.200
+    collectd_backend_carbon_host: 10.10.10.200
+    collectd_backend_carbon_port: 2013
+  linux:
+    system:
+      name: config
+      domain: openstack.local
+  salt:
+    master:
+      accept_policy: open_mode
