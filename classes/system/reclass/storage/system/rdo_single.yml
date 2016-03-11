@@ -6,7 +6,7 @@ parameters:
           name: proxy
           domain: openstack.local
           classes:
-          - system.linux.system.ubuntu
+          - system.linux.system.redhat
           - system.openstack.proxy.single
           params:
             salt_master_host: ${_param:reclass_config_master}
@@ -15,7 +15,7 @@ parameters:
           name: control
           domain: openstack.local
           classes:
-          - system.linux.system.ubuntu
+          - system.linux.system.redhat
           - system.openstack.control.single
           - system.linux.system.lowmem
           params:
@@ -26,7 +26,7 @@ parameters:
           name: compute
           domain: openstack.local
           classes:
-          - system.linux.system.ubuntu
+          - system.linux.system.redhat
           - system.openstack.compute.single
           params:
             salt_master_host: ${_param:reclass_config_master}

@@ -6,7 +6,7 @@ parameters:
           name: proxy
           domain: openstack-ha.local
           classes:
-          - system.linux.system.ubuntu
+          - system.linux.system.redhat
           - system.openstack.proxy.cluster
           params:
             salt_master_host: ${_param:reclass_config_master}
@@ -15,7 +15,7 @@ parameters:
           name: control01
           domain: openstack-ha.local
           classes:
-          - system.linux.system.ubuntu
+          - system.linux.system.redhat
           - system.openstack.control.cluster
           - service.galera.master.cluster
           - system.linux.system.lowmem
@@ -31,7 +31,7 @@ parameters:
           name: control02
           domain: openstack-ha.local
           classes:
-          - system.linux.system.ubuntu
+          - system.linux.system.redhat
           - system.openstack.control.cluster
           - service.galera.slave.cluster
           - system.linux.system.lowmem
@@ -47,7 +47,7 @@ parameters:
           name: control03
           domain: openstack-ha.local
           classes:
-          - system.linux.system.ubuntu
+          - system.linux.system.redhat
           - system.openstack.control.cluster
           - service.galera.slave.cluster
           - system.linux.system.lowmem
@@ -63,7 +63,7 @@ parameters:
           name: compute01
           domain: openstack-ha.local
           classes:
-          - system.linux.system.ubuntu
+          - system.linux.system.redhat
           - system.openstack.compute.cluster
           params:
             salt_master_host: ${_param:reclass_config_master}
@@ -75,7 +75,7 @@ parameters:
           name: compute02
           domain: openstack-ha.local
           classes:
-          - system.linux.system.ubuntu
+          - system.linux.system.redhat
           - system.openstack.compute.cluster
           params:
             salt_master_host: ${_param:reclass_config_master}
