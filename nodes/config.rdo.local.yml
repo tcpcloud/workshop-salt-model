@@ -10,7 +10,7 @@ classes:
 - system.salt.master.formula.sensu
 - system.salt.master.formula.heka
 - system.reclass.storage.salt
-- system.reclass.storage.system.openstack_single
+- system.reclass.storage.system.rdo_single
 parameters:
   _param:
     reclass_data_repository: "https://github.com/tcpcloud/workshop-salt-model.git"
