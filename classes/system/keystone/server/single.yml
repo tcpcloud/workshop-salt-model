@@ -25,6 +25,6 @@ parameters:
             rights: all
           - name: keystone
             password: ${_param:mysql_keystone_password}
-            host: localhost
+            host: ${_param:single_address}
             rights: all
 
