@@ -1,6 +1,10 @@
 classes:
 - service.neutron.control.single
 parameters:
+  neutron:
+    server:
+      database:
+        host: ${_param:single_address}
   mysql:
     server:
       database:

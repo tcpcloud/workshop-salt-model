@@ -21,4 +21,6 @@ parameters:
     controller:
       backend: {}
       default_volume_type: ''
+      database:
+        host: ${_param:single_address}
 

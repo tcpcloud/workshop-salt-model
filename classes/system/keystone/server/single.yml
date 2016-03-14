@@ -13,6 +13,8 @@ parameters:
         - admin
         - Member
         - image_manager
+    database:
+      host: 127.0.0.1
   mysql:
     server:
       database:
