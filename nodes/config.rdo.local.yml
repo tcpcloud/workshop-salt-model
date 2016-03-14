@@ -26,7 +26,7 @@ parameters:
   linux:
     system:
       name: config
-      domain: openstack.local
+      domain: rdo.local
   salt:
     master:
       accept_policy: open_mode
