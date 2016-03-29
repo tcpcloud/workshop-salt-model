@@ -8,7 +8,7 @@ parameters:
           type: nginx_proxy
           name: openvstorage
           proxy:
-            host: 172.10.10.109
+            host: 172.16.10.109
             port: 443
             protocol: https
           host:

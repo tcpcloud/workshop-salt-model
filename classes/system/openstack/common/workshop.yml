@@ -19,14 +19,14 @@ parameters:
     galera_server_cluster_name: openstack_cluster
     galera_server_maintenance_password: workshop
     galera_server_admin_password: workshop
-    cluster_vip_address: 172.10.10.254
+    cluster_vip_address: 172.16.10.254
     cluster_local_address: ${_param:single_address}
     cluster_node01_hostname: ctl01
-    cluster_node01_address: 172.10.10.101
+    cluster_node01_address: 172.16.10.101
     cluster_node02_hostname: ctl02
-    cluster_node02_address: 172.10.10.102
+    cluster_node02_address: 172.16.10.102
     cluster_node03_hostname: ctl03
-    cluster_node03_address: 172.10.10.103
+    cluster_node03_address: 172.16.10.103
     rabbitmq_secret_key: workshop
     rabbitmq_admin_password: workshop
     rabbitmq_openstack_password: workshop
@@ -39,10 +39,10 @@ parameters:
     heat_service_host: ${_param:cluster_vip_address}
     heat_domain_admin_password: workshop
     ceilometer_version: kilo
-    ceilometer_service_host: 172.10.10.108
+    ceilometer_service_host: 172.16.10.108
     cinder_version: kilo
     cinder_service_host: ${_param:cluster_vip_address}
-    ceilometer_graphite_publisher_host: 172.10.10.107
+    ceilometer_graphite_publisher_host: 172.16.10.107
     ceilometer_graphite_publisher_port: 2013
     nova_version: kilo
     nova_service_host: ${_param:cluster_vip_address}
@@ -97,32 +97,32 @@ parameters:
           - ${_param:cluster_node03_hostname}
           - ${_param:cluster_node03_hostname}.workshop.cloudlab.cz
         web01:
-          address: 172.10.10.104
+          address: 172.16.10.104
           names:
           - web01
           - web01.workshop.cloudlab.cz
         cmp01:
-          address: 172.10.10.105
+          address: 172.16.10.105
           names:
           - cmp01
           - cmp01.workshop.cloudlab.cz
         cmp02:
-          address: 172.10.10.106
+          address: 172.16.10.106
           names:
           - cmp02
           - cmp02.workshop.cloudlab.cz
         mon01:
-          address: 172.10.10.107
+          address: 172.16.10.107
           names:
           - mon01
           - mon01.workshop.cloudlab.cz
         mtr01:
-          address: 172.10.10.108
+          address: 172.16.10.108
           names:
           - mtr01
           - mtr01.workshop.cloudlab.cz
         log01:
-          address: 172.10.10.110
+          address: 172.16.10.110
           names:
           - log01
           - log01.workshop.cloudlab.cz
