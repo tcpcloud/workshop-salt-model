@@ -12,6 +12,6 @@ parameters:
         centos-release-gluster:
           version: latest
   _param:
-    heka_amqp_host: 172.10.10.110
+    heka_amqp_host: 172.16.10.110
     heka_amqp_password: Use.toylett1823
-    heka_elasticsearch_host: 172.10.10.110
+    heka_elasticsearch_host: 172.16.10.110
