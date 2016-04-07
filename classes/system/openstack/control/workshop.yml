@@ -44,6 +44,7 @@ parameters:
       storage:
         engine: file
       images: []
+      workers: 1
   nova:
     controller:
       networking: contrail
@@ -58,6 +59,7 @@ parameters:
         members:
         - host: 127.0.0.1
           port: 11211
+      workers: 1
   neutron:
     server:
       plugin: contrail
