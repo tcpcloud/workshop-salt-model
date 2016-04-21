@@ -12,7 +12,25 @@ parameters:
           architectures: amd64
           default: true
           key_url: "http://apt.tcpcloud.eu/public.gpg"
+        tcpcloud_openstack:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:openstack_version} galera-s9s"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
+        tcpcloud_opencontrail:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty oc22"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
+        tcpcloud_horizon:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:horizon_version}"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
+        tcpcloud_salt:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty tcp-salt"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
   _param:
     heka_amqp_host: 172.16.10.110
     heka_amqp_password: Use.toylett1823
     heka_elasticsearch_host: 172.16.10.110
+    openstack_version: kilo
+    horizon_version: liberty
