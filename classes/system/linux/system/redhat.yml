@@ -7,7 +7,7 @@ parameters:
   linux:
     system:
       package:
-        centos-release-openstack-kilo:
+        centos-release-openstack-liberty:
           version: latest
         centos-release-gluster:
           version: latest

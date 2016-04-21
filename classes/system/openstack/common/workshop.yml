@@ -31,23 +31,23 @@ parameters:
     rabbitmq_admin_password: workshop
     rabbitmq_openstack_password: workshop
     rabbitmq_cold_password: workshop
-    glance_version: kilo
+    glance_version: liberty
     glance_service_host: ${_param:cluster_vip_address}
-    keystone_version: kilo
+    keystone_version: liberty
     keystone_service_host: ${_param:cluster_vip_address}
-    heat_version: kilo
+    heat_version: liberty
     heat_service_host: ${_param:cluster_vip_address}
     heat_domain_admin_password: workshop
-    ceilometer_version: kilo
+    ceilometer_version: liberty
     ceilometer_service_host: 172.16.10.108
-    cinder_version: kilo
+    cinder_version: liberty
     cinder_service_host: ${_param:cluster_vip_address}
     ceilometer_graphite_publisher_host: 172.16.10.107
     ceilometer_graphite_publisher_port: 2013
-    nova_version: kilo
+    nova_version: liberty
     nova_service_host: ${_param:cluster_vip_address}
     nova_vncproxy_url: http://${_param:cluster_vip_address}:8060
-    neutron_version: kilo
+    neutron_version: liberty
     neutron_service_host: ${_param:cluster_vip_address}
     glusterfs_service_host: ${_param:cluster_vip_address}
     mysql_admin_user: root

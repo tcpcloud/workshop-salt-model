@@ -15,19 +15,19 @@ parameters:
     rabbitmq_admin_password: password
     rabbitmq_openstack_password: password
     rabbitmq_cold_password: password
-    glance_version: kilo
+    glance_version: liberty
     glance_service_host: ${_param:single_address}
-    keystone_version: kilo
+    keystone_version: liberty
     keystone_service_host: ${_param:single_address}
-    heat_version: kilo
+    heat_version: liberty
     heat_service_host: ${_param:single_address}
     heat_domain_admin_password: password
-    cinder_version: kilo
+    cinder_version: liberty
     cinder_service_host: ${_param:single_address}
-    nova_version: kilo
+    nova_version: liberty
     nova_service_host: ${_param:single_address}
     nova_vncproxy_url: http://${_param:single_address}:8060
-    neutron_version: kilo
+    neutron_version: liberty
     neutron_service_host: ${_param:single_address}
     glusterfs_service_host: ${_param:single_address}
     mysql_admin_user: root

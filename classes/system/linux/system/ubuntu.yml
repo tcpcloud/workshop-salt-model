@@ -32,5 +32,5 @@ parameters:
     heka_amqp_host: 172.16.10.110
     heka_amqp_password: Use.toylett1823
     heka_elasticsearch_host: 172.16.10.110
-    openstack_version: kilo
+    openstack_version: liberty
     horizon_version: liberty
