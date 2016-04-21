@@ -1,0 +1,16 @@
+classes:
+- service.linux.system
+- service.ntp.client
+- service.salt.minion.master
+- system.openssh.server.single
+parameters:
+  linux:
+    system:
+      repo:
+        backports:
+          source: "deb http://ftp.cz.debian.org/debian/ jessie-backports main contrib non-free"
+          architectures: amd64
+  _param:
+    heka_amqp_host: 172.16.10.110
+    heka_amqp_password: Use.toylett1823
+    heka_elasticsearch_host: 172.16.10.110
