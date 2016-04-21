@@ -1,6 +1,6 @@
 classes:
 - service.git.client
-- system.linux.system.single
+- system.linux.system.debian
 - system.openssh.client.workshop
 - system.salt.master.single
 - system.salt.master.formula.graphite
@@ -26,7 +26,7 @@ parameters:
   linux:
     system:
       name: config
-      domain: openstack.local
+      domain: osdebian.local
   salt:
     master:
       accept_policy: open_mode
