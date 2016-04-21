@@ -10,6 +10,10 @@ parameters:
         backports:
           source: "deb http://ftp.cz.debian.org/debian/ jessie-backports main contrib non-free"
           architectures: amd64
+        tcpcloud_opencontrail:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty oc22"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
         tcpcloud_salt:
           source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty tcp-salt"
           architectures: amd64
