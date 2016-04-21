@@ -7,6 +7,17 @@ parameters:
   linux:
     system:
       repo:
+        unstable:
+          source: "deb http://ftp.cz.debian.org/debian/ unstable main contrib non-free"
+          architectures: amd64
+          pin:
+            - pin: "release a=unstable"
+              package: 'salt*'
+              priority: 500
+            # neutron-lbaas-agent is not in jessie backports
+            - pin: "release a=unstable"
+              package: 'neutron-lbaas-agent'
+              priority: 500
         backports:
           source: "deb http://ftp.cz.debian.org/debian/ jessie-backports main contrib non-free"
           architectures: amd64
@@ -21,6 +32,10 @@ parameters:
           source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty tcp-salt"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
+          pin:
+            - pin: "origin apt.tcpcloud.eu"
+              package: "salt-formula-*"
+              priority: 500
   _param:
     heka_amqp_host: 172.16.10.110
     heka_amqp_password: Use.toylett1823
