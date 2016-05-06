@@ -1,0 +1,14 @@
+classes:
+- system.openstack.common.single
+- system.nova.compute.single
+- system.neutron.compute.single
+parameters:
+  linux:
+    system:
+      repo:
+        tcpcloud_openstack:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:keystone_version}"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
+    storage:
+      multipath: false

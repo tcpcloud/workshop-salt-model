@@ -1,0 +1,36 @@
+parameters:
+  reclass:
+    storage:
+      node:
+        proxy.openstack-dvr.local:
+          name: proxy
+          domain: openstack-dvr.local
+          classes:
+          - system.linux.system.ubuntu
+          - system.openstack.proxy.single
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.203
+        control.openstack-dvr.local:
+          name: control
+          domain: openstack-dvr.local
+          classes:
+          - system.linux.system.ubuntu
+          - system.openstack.control.dvr_single
+          - system.linux.system.lowmem
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.201
+            opencontrail_database_id: 1
+        compute.openstack-dvr.local:
+          name: compute
+          domain: openstack-dvr.local
+          classes:
+          - system.linux.system.ubuntu
+          - system.openstack.compute.dvr_single
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.202
+            opencontrail_compute_address: 10.10.10.202
+            opencontrail_compute_gateway: 10.10.10.1
+            opencontrail_compute_iface: eth0

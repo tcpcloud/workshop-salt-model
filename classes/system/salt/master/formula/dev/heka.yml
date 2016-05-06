@@ -1,0 +1,22 @@
+parameters:
+  salt:
+    master:
+      environment:
+        dev:
+          formula:
+            elasticsearch:
+              source: git
+              address: '${_param:salt_master_environment_repository}/elasticsearch-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            heka:
+              source: git
+              address: '${_param:salt_master_environment_repository}/heka-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            kibana:
+              source: git
+              address: '${_param:salt_master_environment_repository}/kibana-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            java:
+              source: git
+              address: '${_param:salt_master_environment_repository}/java-formula.git'
+              revision: ${_param:salt_master_environment_revision}

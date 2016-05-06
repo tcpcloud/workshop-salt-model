@@ -1,0 +1,27 @@
+iparameters:
+  salt:
+    master:
+      environment:
+        dev:
+          formula:
+            git:
+              source: git
+              address: '${_param:salt_master_environment_repository}/git-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            linux:
+              source: git
+              address: '${_param:salt_master_environment_repository}/linux-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            openssh:
+              source: git
+              address: '${_param:salt_master_environment_repository}/openssh-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            reclass:
+              source: git
+              address: '${_param:salt_master_environment_repository}/reclass-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            salt:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+

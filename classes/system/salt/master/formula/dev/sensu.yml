@@ -1,0 +1,18 @@
+parameters:
+  salt:
+    master:
+      environment:
+        dev:
+          formula:
+            rabbitmq:
+              source: git
+              address: '${_param:salt_master_environment_repository}/rabbitmq-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            redis:
+              source: git
+              address: '${_param:salt_master_environment_repository}/redis-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            sensu:
+              source: git
+              address: '${_param:salt_master_environment_repository}/sensu-formula.git'
+              revision: ${_param:salt_master_environment_revision}

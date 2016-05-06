@@ -1,0 +1,65 @@
+classes:
+- service.memcached.server.single
+- service.mysql.server.single
+- service.rabbitmq.server.single
+- system.keystone.server.single
+- system.keystone.server.service.keystone
+- system.keystone.server.service.glance
+- system.keystone.server.service.nova
+- system.keystone.server.service.neutron
+- system.keystone.server.service.cinder
+- system.glance.control.single
+- system.nova.control.single
+- system.neutron.control.single
+- system.neutron.network.single
+- system.cinder.control.single
+- system.heat.server.single
+- system.openstack.common.single
+parameters:
+  linux:
+    system:
+      repo:
+        tcpcloud_openstack:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:keystone_version} galera-s9s"
+          architectures: amd64
+          key_url: "http://apt.tcpcloud.eu/public.gpg"
+  keystone:
+    server:
+      admin_email: stackmaster@domain.com
+  glance:
+    server:
+      storage:
+        engine: file
+      images: []
+      workers: 1
+  nova:
+    controller:
+      networking: contrail
+      bind:
+        private_address: ${_param:single_address}
+        public_address: ${_param:single_address}
+        public_name: public.domain.com
+        novncproxy_port: 6080
+      vncproxy_url: http://${_param:single_address}:6080
+      metadata:
+        password: metadataPass
+      cache:
+        engine: memcached
+        prefix: 'CACHE_HORIZON'
+        members: 
+        - host: 127.0.0.1
+          port: 11211
+      workers: 1
+  cinder:
+    volume:
+      notification: true
+    controller:
+      notification: true
+  neutron:
+    server:
+      plugin: contrail
+      tunnel_type: vxlan
+      public_networks: []
+      contrail:
+        version: ${_param:opencontrail_version}
+

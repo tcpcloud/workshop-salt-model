@@ -1,0 +1,94 @@
+parameters:
+  salt:
+    master:
+      environment:
+        dev:
+          formula:
+            ceilometer:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-ceilometer.git'
+              revision: ${_param:salt_master_environment_revision}
+            cinder:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-cinder.git'
+              revision: ${_param:salt_master_environment_revision}
+            galera:
+              source: git
+              address: '${_param:salt_master_environment_repository}/galera-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            glance:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-glance.git'
+              revision: ${_param:salt_master_environment_revision}
+            haproxy:
+              source: git
+              address: '${_param:salt_master_environment_repository}/haproxy-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            heat:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-heat.git'
+              revision: ${_param:salt_master_environment_revision}
+            horizon:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-horizon.git'
+              revision: ${_param:salt_master_environment_revision}
+            keepalived:
+              source: git
+              address: '${_param:salt_master_environment_repository}/keepalived-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            keystone:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-keystone.git'
+              revision: ${_param:salt_master_environment_revision}
+            memcached:
+              source: git
+              address: '${_param:salt_master_environment_repository}/memcached-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            mongodb:
+              source: git
+              address: '${_param:salt_master_environment_repository}/mongodb-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            mysql:
+              source: git
+              address: '${_param:salt_master_environment_repository}/mysql-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            neutron:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-neutron.git'
+              revision: ${_param:salt_master_environment_revision}
+            nginx:
+              source: git
+              address: '${_param:salt_master_environment_repository}/nginx-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            nova:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-nova.git'
+              revision: ${_param:salt_master_environment_revision}
+            opencontrail:
+              source: git
+              address: 'https://github.com/openstack/salt-formula-opencontrail.git'
+              revision: ${_param:salt_master_environment_revision}
+            python:
+              source: git
+              address: '${_param:salt_master_environment_repository}/python-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            rabbitmq:
+              source: git
+              address: '${_param:salt_master_environment_repository}/rabbitmq-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            supervisor:
+              source: git
+              address: '${_param:salt_master_environment_repository}/supervisor-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            glusterfs:
+              source: git
+              address: '${_param:salt_master_environment_repository}/glusterfs-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            mysql:
+              source: git
+              address: '${_param:salt_master_environment_repository}/mysql-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            openvstorage:
+              source: git
+              address: '${_param:salt_master_environment_repository}/openvstorage-formula.git'
+              revision: ${_param:salt_master_environment_revision}

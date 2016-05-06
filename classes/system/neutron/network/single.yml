@@ -1,0 +1,6 @@
+classes:
+- service.neutron.network.single
+parameters:
+  neutron:
+    network:
+      version: ${_param:neutron_version}

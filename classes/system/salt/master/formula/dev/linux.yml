@@ -1,0 +1,35 @@
+parameters:
+  salt:
+    master:
+      environment:
+        dev:
+          formula:
+            collectd:
+              source: git
+              address: '${_param:salt_master_environment_repository}/collectd-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            git:
+              source: git
+              address: '${_param:salt_master_environment_repository}/git-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            iptables:
+              source: git
+              address: '${_param:salt_master_environment_repository}/iptables-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            linux:
+              source: git
+              address: '${_param:salt_master_environment_repository}/linux-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            ntp:
+              source: git
+              address: '${_param:salt_master_environment_repository}/ntp-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            openssh:
+              source: git
+              address: '${_param:salt_master_environment_repository}/openssh-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+            backupninja:
+              source: git
+              address: '${_param:salt_master_environment_repository}/backupninja-formula.git'
+              revision: ${_param:salt_master_environment_revision}
+
