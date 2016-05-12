@@ -20,7 +20,7 @@ parameters:
     reclass_config_master: 10.10.10.200
     single_address: 10.10.10.200
     salt_master_host: 127.0.0.1
-    salt_master_base_environment: prd
+    salt_master_base_environment: dev
     rabbitmq_monitor_password: password
     sensu_message_queue_host: 10.10.10.200
     collectd_backend_carbon_host: 10.10.10.200
