@@ -6,13 +6,13 @@ parameters:
           formula:
             apache:
               source: git
-              address: '${_param:salt_master_environment_repository}/apache-formula.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-apache.git'
               revision: ${_param:salt_master_environment_revision}
             graphite:
               source: git
-              address: '${_param:salt_master_environment_repository}/graphite-formula.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-graphite.git'
               revision: ${_param:salt_master_environment_revision}
             postgresql:
               source: git
-              address: '${_param:salt_master_environment_repository}/postgresql-formula.git'
+              address: '${_param:salt_master_environment_repository}/salt-formula-postgresql.git'
               revision: ${_param:salt_master_environment_revision}
