@@ -29,6 +29,25 @@ parameters:
           source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty oc22"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
+  rabbitmq:
+    server:
+      host:
+        '/':
+          enabled: true
+          user: guest
+          password: guest
+          policies:
+          - name: HA
+            pattern: '^(?!amq\.).*'
+            definition: '{"ha-mode": "all", "message-ttl": 120000}'
+        '/openstack':
+          enabled: true
+          user: openstack
+          password: ${_param:rabbitmq_openstack_password}
+          policies:
+          - name: HA
+            pattern: '^(?!amq\.).*'
+            definition: '{"ha-mode": "all", "message-ttl": 120000}'
   keepalived:
     cluster:
       instance:
