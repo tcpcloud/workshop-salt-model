@@ -1,0 +1,22 @@
+applications:
+- zookeeper
+classes:
+- system.linux.system.container
+- system.openstack.common.cluster
+parameters:
+  _param:
+    single_address: 127.0.0.1
+  linux:
+    system:
+      name: "$HOSTNAME"
+  zookeeper:
+    server:
+      enabled: true
+      id: "$ZOOKEEPER_ID"
+      members:
+      - host: "$ZOOKEEPER_SERVER_01_HOST"
+        id: 1
+      - host: "$ZOOKEEPER_SERVER_02_HOST"
+        id: 2
+      - host: "$ZOOKEEPER_SERVER_03_HOST"
+        id: 3

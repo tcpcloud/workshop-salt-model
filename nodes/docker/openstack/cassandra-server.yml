@@ -1,0 +1,26 @@
+applications:
+- cassandra
+classes:
+- system.linux.system.container
+- system.openstack.common.cluster
+parameters:
+  _param:
+    single_address: 127.0.0.1
+  linux:
+    system:
+      name: "$HOSTNAME"
+  cassandra:
+    server:
+      enabled: true
+      version: 2
+      name: 'cassandra'
+      data_dirs:
+      - /var/lib/cassandra
+      bind:
+        address: "$CASSANDRA_SERVER_LOCAL_HOST"
+        rpc_port: 9160
+        port: 9042
+      members:
+      - host: "$CASSANDRA_SERVER_01_HOST"
+      - host: "$CASSANDRA_SERVER_02_HOST"
+      - host: "$CASSANDRA_SERVER_03_HOST"
