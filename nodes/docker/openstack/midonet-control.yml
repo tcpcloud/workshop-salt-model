@@ -9,6 +9,24 @@ parameters:
   linux:
     system:
       name: "$HOSTNAME"
+      repo:
+        midonet:
+          source: "deb [arch=amd64] http://repo.midokura.com/midonet-5/ stable main"
+          architectures: amd64
+          key_url: "http://repo.midokura.com/midorepo.key"
+        midonet_kilo:
+          source: "deb http://repo.midokura.com/openstack-kilo stable main"
+          architectures: amd64
+          key_url: "http://repo.midokura.com/midorepo.key"
+        midonet_tools:
+          source: "deb http://repo.midokura.com/misc stable main"
+          architectures: amd64
+          key_url: "http://repo.midokura.com/midorepo.key"
+        java:
+          source: "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main"
+          architectures: amd64
+          key_server: keyserver.ubuntu.com
+          key_id: 0x86F44E2A
   midonet:
     control:
       version: v5.0
