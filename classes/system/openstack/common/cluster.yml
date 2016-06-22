@@ -2,7 +2,7 @@ parameters:
   _param:
     admin_email: root@localhost
     cluster_public_host: _
-    opencontrail_version: 2.2
+    opencontrail_version: 3.0
     opencontrail_compute_dns: 8.8.8.8
     opencontrail_stats_password: contrail123
     galera_server_cluster_name: openstack_cluster
@@ -20,19 +20,19 @@ parameters:
     rabbitmq_admin_password: workshop
     rabbitmq_openstack_password: workshop
     rabbitmq_cold_password: workshop
-    glance_version: kilo
+    glance_version: mitaka
     glance_service_host: ${_param:cluster_vip_address}
-    keystone_version: kilo
+    keystone_version: mitaka
     keystone_service_host: ${_param:cluster_vip_address}
-    heat_version: kilo
+    heat_version: mitaka
     heat_service_host: ${_param:cluster_vip_address}
     heat_domain_admin_password: workshop
-    cinder_version: kilo
+    cinder_version: mitaka
     cinder_service_host: ${_param:cluster_vip_address}
-    nova_version: kilo
+    nova_version: mitaka
     nova_service_host: ${_param:cluster_vip_address}
     nova_vncproxy_url: http://${_param:cluster_vip_address}:8060
-    neutron_version: kilo
+    neutron_version: mitaka
     neutron_service_host: ${_param:cluster_vip_address}
     glusterfs_service_host: ${_param:cluster_vip_address}
     mysql_admin_user: root
@@ -54,7 +54,7 @@ parameters:
     keystone_neutron_password: workshop
     keystone_nova_password: workshop
     ceilometer_secret_key: workshop
-    horizon_version: liberty
+    horizon_version: mitaka
     horizon_secret_key: workshop
     horizon_identity_host: ${_param:cluster_vip_address}
     horizon_identity_encryption: none

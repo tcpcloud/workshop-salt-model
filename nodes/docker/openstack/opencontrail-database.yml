@@ -8,7 +8,7 @@ parameters:
     single_address: 127.0.0.1
   linux:
     system:
-      name: opencontrail-database
+      name: "$HOSTNAME"
   opencontrail:
     common:
       version: ${_param:opencontrail_version}

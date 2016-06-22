@@ -7,12 +7,19 @@ parameters:
     single_address: 127.0.0.1
   linux:
     system:
-      name: mysql-service
+      name: "$HOSTNAME"
   mysql:
     enabled: True
     server:
       database:
         nova:
+          encoding: utf8
+          users:
+          - name: nova
+            password: ${_param:mysql_nova_password}
+            host: '%'
+            rights: all
+        nova_api:
           encoding: utf8
           users:
           - name: nova

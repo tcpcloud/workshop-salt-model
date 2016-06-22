@@ -22,7 +22,7 @@ parameters:
     neutron_service_host: "$NEUTRON_SERVER_SERVICE_HOST"
   linux:
     system:
-      name: keystone-server
+      name: "$HOSTNAME"
   keystone:
     server:
       enabled: true

@@ -8,7 +8,7 @@ parameters:
     single_address: 127.0.0.1
   linux:
     system:
-      name: neutron-server
+      name: "$HOSTNAME"
   opencontrail:
     config:
       discovery:

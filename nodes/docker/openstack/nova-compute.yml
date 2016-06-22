@@ -9,7 +9,7 @@ parameters:
     nova_networking: contrail
   linux:
     system:
-      name: nova-compute
+      name: "$HOSTNAME"
   nova:
     compute:
       version: ${_param:nova_version}

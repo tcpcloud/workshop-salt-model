@@ -9,7 +9,7 @@ parameters:
     nova_networking: contrail
   linux:
     system:
-      name: nova-controller
+      name: "$HOSTNAME"
   nova:
     controller:
       enabled: true

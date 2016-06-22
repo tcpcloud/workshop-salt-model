@@ -8,7 +8,7 @@ parameters:
     single_address: 127.0.0.1
   linux:
     system:
-      name: opencontrail-config
+      name: "$HOSTNAME"
   opencontrail:
     common:
       version: ${_param:opencontrail_version}
@@ -25,7 +25,7 @@ parameters:
     config:
       version: ${_param:opencontrail_version}
       enabled: true
-      multi_tenancy: true
+      multi_tenancy: false
       network:
         engine: neutron
         host: "$NEUTRON_SERVER_SERVICE_HOST"
