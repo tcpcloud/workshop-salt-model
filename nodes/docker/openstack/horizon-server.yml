@@ -1,0 +1,34 @@
+applications:
+  - horizon
+classes:
+- system.linux.system.container
+- system.openstack.common.cluster
+- service.horizon.server.single
+parameters:
+  _param:
+    single_address: 127.0.0.1
+  linux:
+    system:
+      name: "$HOSTNAME"
+  horizon:
+    server:
+      bind:
+        address: 0.0.0.0
+        port: 80
+      identity:
+        host: "$KEYSTONE_SERVER_SERVICE_HOST"
+        port: 5000
+      cache:
+        members:
+        - host: 127.0.0.1
+          port: 11211
+      plugin:
+        horizon_theme:
+          theme_name: tcp
+          source:
+            engine: pkg
+            name: openstack-dashboard-tcp-theme
+        contrail:
+          source:
+            engine: pkg
+            name: openstack-dashboard-contrail-panels
