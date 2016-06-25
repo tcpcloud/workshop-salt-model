@@ -33,6 +33,12 @@ parameters:
       admin_name: admin
       admin_password: ${_param:keystone_admin_password}
       admin_email: root@localhost
+      roles:
+        - admin
+        - member
+        - image_manager
+        - heat_stack_owner
+        - heat_stack_user
       bind:
         address: 0.0.0.0
         private_address: ${_param:keystone_service_host}
