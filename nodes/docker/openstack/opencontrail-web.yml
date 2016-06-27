@@ -1,0 +1,44 @@
+applications:
+  - opencontrail
+classes:
+- system.linux.system.container
+- system.openstack.common.cluster
+parameters:
+  _param:
+    single_address: 127.0.0.1
+  linux:
+    system:
+      name: "$HOSTNAME"
+  opencontrail:
+    web:
+      version: ${_param:opencontrail_version}
+      enabled: True
+      enable_discovery: False
+      bind:
+        address: "$OPENCONTRAIL_WEB_LOCAL_HOST"
+      master:
+        host: "$OPENCONTRAIL_CONFIG_SERVICE_HOST"
+      network:
+        host: "$NEUTRON_SERVER_SERVICE_HOST"
+      analytics:
+        host: "$OPENCONTRAIL_COLLECTOR_SERVICE_HOST"
+      cache:
+        engine: redis
+        host: "$REDIS_MASTER_SERVICE_HOST"
+        port: 6379
+      members:
+      - host: "$OPENCONTRAIL_DATABASE_SERVICE_HOST"
+        id: 1
+#      - host: ${_param:cluster_node02_address}
+#        id: 2
+#      - host: ${_param:cluster_node03_address}
+#        id: 3
+      identity:
+        engine: keystone
+        version: '2.0'
+        host: "$KEYSTONE_SERVER_SERVICE_HOST"
+        port: 35357
+        user: admin
+        password: '${_param:keystone_admin_password}'
+        token: '${_param:keystone_service_token}'
+        tenant: admin
