@@ -15,7 +15,7 @@ parameters:
       version: ${_param:nova_version}
       enabled: true
       virtualization: kvm
-      vncproxy_url: http://vncproxy_url:6080
+      vncproxy_url: http://"$NOVA_CONTROLLER_SERVICE_HOST":6080
       reserved_host_memory_mb: 32768
       log_dir_perms: 755
       bind:
