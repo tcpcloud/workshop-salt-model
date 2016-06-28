@@ -13,15 +13,9 @@ parameters:
     common:
       version: ${_param:opencontrail_version}
       identity:
-        engine: keystone
-        host: "$KEYSTONE_SERVER_SERVICE_HOST"
-        port: 35357
-        token: '${_param:keystone_service_token}'
-        password: '${_param:keystone_admin_password}'
-      network:
-        engine: neutron
-        host: "$NEUTRON_SERVER_SERVICE_HOST"
-        port: 9696
+        engine: kubernetes
+        password: none
+        token: none
     database:
       version: ${_param:opencontrail_version}
       cassandra:

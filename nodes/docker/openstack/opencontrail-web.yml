@@ -18,8 +18,6 @@ parameters:
         address: "$OPENCONTRAIL_WEB_LOCAL_HOST"
       master:
         host: "$OPENCONTRAIL_CONFIG_SERVICE_HOST"
-      network:
-        host: "$NEUTRON_SERVER_SERVICE_HOST"
       analytics:
         host: "$OPENCONTRAIL_COLLECTOR_SERVICE_HOST"
       cache:
@@ -34,11 +32,6 @@ parameters:
 #      - host: ${_param:cluster_node03_address}
 #        id: 3
       identity:
-        engine: keystone
-        version: '2.0'
-        host: "$KEYSTONE_SERVER_SERVICE_HOST"
-        port: 35357
-        user: admin
-        password: '${_param:keystone_admin_password}'
-        token: '${_param:keystone_service_token}'
-        tenant: admin
+        engine: kubernetes
+        password: none
+        token: none
