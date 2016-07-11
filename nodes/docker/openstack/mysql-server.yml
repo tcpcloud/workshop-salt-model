@@ -1,7 +1,6 @@
 classes:
 - service.linux.system.container
 - system.openstack.common.cluster
-- service.mysql.server.single
 parameters:
   _param:
     single_address: 127.0.0.1
@@ -9,8 +8,10 @@ parameters:
     system:
       name: mysql-service
   mysql:
-    enabled: True
     server:
+      admin:
+        user: root
+        password: ${_param:mysql_admin_password}
       database:
         nova:
           encoding: utf8
