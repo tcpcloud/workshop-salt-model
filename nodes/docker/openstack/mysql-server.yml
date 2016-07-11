@@ -9,6 +9,7 @@ parameters:
       name: mysql-service
   mysql:
     server:
+      enabled: false
       admin:
         user: root
         password: ${_param:mysql_admin_password}
