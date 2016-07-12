@@ -10,6 +10,19 @@ parameters:
     system:
       name: rabbitmq-service
   rabbitmq:
+    cluster:
+      enabled: true
+      role: none
+      master: none
+      members:
+        - host: "$RABBITMQ_SERVER_NODE01_SERVICE_HOST"
+          name: rabbitmq-server-node01
+        - host: "$RABBITMQ_SERVER_NODE02_SERVICE_HOST"
+          name: rabbitmq-server-node02
+        - host: "$RABBITMQ_SERVER_NODE03_SERVICE_HOST"
+          name: rabbitmq-server-node03
+      mode: disc
+      name: openstack
     server:
       host:
         '/':
