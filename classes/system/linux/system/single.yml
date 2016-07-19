@@ -10,7 +10,7 @@ parameters:
     system:
       repo:
         tcpcloud:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty main security extra tcp tcp-salt liberty oc22 galera-s9s"
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty main security extra tcp tcp-salt liberty oc30 galera-s9s"
           architectures: amd64
           default: true
           key_url: "http://apt.tcpcloud.eu/public.gpg"
