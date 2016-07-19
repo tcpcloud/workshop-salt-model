@@ -13,7 +13,7 @@ parameters:
     carbon_message_queue_host: mon01
     collectd_backend_carbon_host: mon01
     collectd_backend_carbon_port: 2023
-    opencontrail_version: 2.2
+    opencontrail_version: 3.0
     opencontrail_compute_dns: 8.8.8.8
     opencontrail_stats_password: contrail123
     galera_server_cluster_name: openstack_cluster

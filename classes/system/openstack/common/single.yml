@@ -7,7 +7,7 @@ parameters:
     cluster_public_host: _
     graphite_secret_key: password
     carbon_message_queue_host: ${_param:single_address}
-    opencontrail_version: 2.2
+    opencontrail_version: 3.0
     opencontrail_compute_dns: 8.8.8.8
     opencontrail_stats_password: password
     cluster_domain: cloudlab.cz
