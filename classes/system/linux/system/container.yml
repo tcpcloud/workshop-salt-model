@@ -9,6 +9,6 @@ parameters:
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
         tcpcloud_opencontrail:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty oc22"
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty oc30"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
