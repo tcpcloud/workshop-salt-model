@@ -1,0 +1,26 @@
+---
+driver:
+  name: docker
+  use_sudo: false
+  hostname: config.<%= ENV['SALT_MODEL_DOMAIN'] || 'openstack.local' %>
+  volume:
+    - <%= ENV['PWD'] %>:/tmp/kitchen
+  provision_command:
+    #- apt-get update
+    - which wget >/dev/null || (apt-get install -y wget)
+    - echo 'deb [arch=amd64] http://apt.tcpcloud.eu/nightly trusty main security extra tcp tcp-salt' > /etc/apt/sources.list
+    - wget -O - http://apt.tcpcloud.eu/public.gpg | apt-key add -
+    - apt-get update
+    - apt-get install -y python-pip salt-master curl reclass salt-formula-*
+    - pip install envtpl cookiecutter
+
+provisioner:
+  name: shell
+  script: verify.sh
+
+platforms:
+  - name: ubuntu-16.04
+
+suites:
+  - name: default
+
