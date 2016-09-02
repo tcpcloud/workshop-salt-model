@@ -34,3 +34,27 @@ parameters:
             opencontrail_compute_address: 10.10.10.202
             opencontrail_compute_gateway: 10.10.10.1
             opencontrail_compute_iface: eth0
+        compute01.openstack.local:
+          name: compute01
+          domain: openstack.local
+          classes:
+          - system.linux.system.ubuntu
+          - system.openstack.compute.single
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.202
+            opencontrail_compute_address: 10.10.10.202
+            opencontrail_compute_gateway: 10.10.10.1
+            opencontrail_compute_iface: eth0
+        compute02.openstack.local:
+          name: compute02
+          domain: openstack.local
+          classes:
+          - system.linux.system.ubuntu
+          - system.openstack.compute.single
+          params:
+            salt_master_host: ${_param:reclass_config_master}
+            single_address: 10.10.10.204
+            opencontrail_compute_address: 10.10.10.204
+            opencontrail_compute_gateway: 10.10.10.1
+            opencontrail_compute_iface: eth0
