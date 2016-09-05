@@ -5,7 +5,7 @@ parameters:
     system:
       repo:
         tcpcloud_salt:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty tcp-salt"
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty tcp-salt"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
 

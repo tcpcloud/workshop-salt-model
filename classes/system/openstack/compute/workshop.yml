@@ -17,11 +17,11 @@ parameters:
     system:
       repo:
         tcpcloud_openstack:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty ${_param:keystone_version}"
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty ${_param:keystone_version}"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
         tcpcloud_opencontrail:
-          source: "deb [arch=amd64] http://apt.tcpcloud.eu/testing/ trusty oc30"
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty oc30"
           architectures: amd64
           key_url: "http://apt.tcpcloud.eu/public.gpg"
   nova:
