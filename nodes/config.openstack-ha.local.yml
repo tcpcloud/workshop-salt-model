@@ -14,7 +14,8 @@ classes:
 parameters:
   _param:
     reclass_data_repository: "https://github.com/tcpcloud/workshop-salt-model.git"
-    reclass_data_revision: master
+    # TODO return master revision
+    reclass_data_revision: testing-liberty
     reclass_config_master: 10.10.10.200
     single_address: 10.10.10.200
     salt_master_host: 127.0.0.1
