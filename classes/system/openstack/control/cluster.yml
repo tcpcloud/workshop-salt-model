@@ -83,7 +83,18 @@ parameters:
       tunnel_type: vxlan
       public_networks: []
       contrail:
-        version: ${_param:opencontrail_version}
+        version: 3.0
+  opencontrail:
+    config:
+      version: 3.0
+    control:
+      version: 3.0
+    collector:
+      version: 3.0
+    web:
+      version: 3.0
+    database:
+      version: 3.0
   haproxy:
     proxy:
       listen:
